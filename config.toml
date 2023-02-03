@@ -1,0 +1,38 @@
+baseURL = 'http://example.org/'
+theme = "cactus"
+languageCode = 'en-us'
+title = 'The Simon Research Ensemble'
+
+[params]
+  colortheme = "white" # dark, light, white, or classic
+  description = "we are a mathematical and computational research group at Oregon State University, within the School of Chemical, Biological, and Environmental Engineering."
+  mainSectionTitle = "Blog"
+  showAllPostsOnHomePage = true
+  postsOnHomePage = 5
+  css = ["static/cory.css"]
+
+# Main menu which appears below site header.
+[[menu.main]]
+name = "the prof"
+url = "/theprof"
+weight = 1
+
+[[menu.main]]
+name = "students"
+url = "/students"
+weight = 1
+
+[[menu.main]]
+name = "pubs"
+url = "/pubs"
+weight = 1
+
+[[menu.main]]
+name = "blog"
+url = "/blog"
+weight = 1
+
+[markup]
+    [markup.goldmark.renderer]
+     unsafe = true
+
