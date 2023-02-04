@@ -7,9 +7,10 @@ title = 'The Simon Research Ensemble'
   colortheme = "white" # dark, light, white, or classic
   description = "we are a mathematical and computational research group at Oregon State University, within the School of Chemical, Biological, and Environmental Engineering."
   mainSectionTitle = "Blog"
-  showAllPostsOnHomePage = true
+  showAllPostsOnHomePage = false
   postsOnHomePage = 5
   css = ["static/cory.css"]
+  logo="trees.png"
 
 # Main menu which appears below site header.
 [[menu.main]]
@@ -31,8 +32,3 @@ weight = 1
 name = "blog"
 url = "/blog"
 weight = 1
-
-[markup]
-    [markup.goldmark.renderer]
-     unsafe = true
-
