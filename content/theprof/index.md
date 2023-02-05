@@ -1,6 +1,6 @@
 ## cory simon
 
-<img src="cory.png" width="200" style="border-radius: 50%;"/>
+{{< person-photo cory.png >}}
 
 assistant professor. \
 Ph.D. Chemical Engineering. UC Berkeley.

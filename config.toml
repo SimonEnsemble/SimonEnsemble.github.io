@@ -9,7 +9,7 @@ title = 'The Simon Research Ensemble'
   mainSectionTitle = "Blog"
   showAllPostsOnHomePage = false
   postsOnHomePage = 5
-  css = ["static/cory.css"]
+  css = ["css/custom.css"]
   logo="trees.png"
 
 # Main menu which appears below site header.
