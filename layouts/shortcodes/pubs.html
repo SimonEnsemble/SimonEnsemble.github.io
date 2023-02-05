@@ -1,14 +1,23 @@
 {{ range $.Site.Data.pubs }}
+    {{ with .institution }}
+    <h2> @ {{ . }} </h2>
+    {{ else }}
         {{ $image := resources.Get ( .image ) }}
         {{ $image := $image.Resize "500x" }}
-        <img src="{{ $image.RelPermalink }}" width="100"/>
+        <div class="flex flex-even">
+            <div class="pub-left">
+                <img src="{{ $image.RelPermalink }}" width="140"/>
+            </div>
 
-
-        "{{ .title }}"<br>
-        {{ .authors }}<br>
-        <div>
-           <i>{{ .journal }}</i>. {{ .year }}. 
-           <a href="{{ .url }}">link</a>
+            <div class="pub-right">
+                "{{ .title }}"<br>
+                {{ .authors }}<br>
+                <div>
+                   <i>{{ .journal }}</i>. {{ .year }}. 
+                   <a href="{{ .url }}">link</a>
+                </div>
+                <div><br><br></div>
+            </div>
         </div>
-        <div><br><br></div>
+    {{ end }} 
 {{ end }} 

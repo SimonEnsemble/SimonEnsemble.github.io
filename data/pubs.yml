@@ -1,0 +1,304 @@
+- institution: Oregon State University
+
+- title: A Bayesian treatment of the German tank problem
+  authors: C. Simon
+  journal: arXiv
+  year: 2023
+  url: https://arxiv.org/abs/2301.00046
+  image: pubs/german_tanks.png
+
+- title:  A toy model of a catalytic filter in series with a gas sensor
+  authors: G. Fabusola, G. Noh, C. Simon
+  journal: ChemRxiv
+  year: 2022
+  url: https://chemrxiv.org/engage/chemrxiv/article-details/62b3f4ae1672a2be49498af0
+  image: pubs/cat_filter.png
+
+- title: Classifying the toxicity of pesticides to honey bees via support vector machines with random walk graph kernels
+  authors: P. Yang, E. A. Henle, X. Z. Fern, C. Simon
+  journal: The Journal of Chemical Physics
+  year: 2022
+  url: https://aip.scitation.org/doi/10.1063/5.0090573
+  other: <a href="https://aip.scitation.org/doi/10.1063/10.0012498">APS Scilight</a>. <a href="https://aip.scitation.org/action/showLargeCover?doi=10.1063%2Fjcp.2022.157.issue-3">on the cover of JCP</a>. <a href="https://today.oregonstate.edu/news/oregon-state-researchers-develop-computer-model-predict-whether-pesticide-will-harm-bees">OSU News</a>. <a href="https://www.capitalpress.com/ag_sectors/orchards_nuts_vines/osu-researchers-develop-computer-model-to-predict-which-pesticides-will-harm-bees/article_7028a5e4-039f-11ed-b645-1fab4583e76f.html">Capital Press</a>. <a href="https://chemrxiv.org/engage/chemrxiv/article-details/628999d687d01ff873edc7d2">preprint</a>.
+  image: pubs/bees.png
+
+- title: Computation-informed optimization of Ni(PyC)₂ functionalization for noble gas separations
+  authors: N. Gantzler, M.-B. Kim, A. Robinson, M. W. Terban, S. Ghose, R. E. Dinnebier, A. H. York, D. Tiana, C. M. Simon, P. K. Thallapally
+  journal: Cell Reports Physical Science
+  year: 2021
+  url: https://www.cell.com/cell-reports-physical-science/fulltext/S2666-3864(22)00316-2
+  image: pubs/nipyc.png
+
+- title: "PoreMatMod.jl: Julia package for in silico post-synthetic modification of crystal structure models"
+  authors: E. A. Henle, N. Gantzler, P. K. Thallapally, X. Z. Fern, C. Simon
+  journal: Journal of Chemical Information and Modeling
+  year: 2021
+  url: https://pubs.acs.org/doi/10.1021/acs.jcim.1c01219
+  other: <a href="https://doi.org/10.33774/chemrxiv-2021-vx5r3">preprint</a>. <a href="https://pubs.acs.org/editorschoice/">ACS Editors’ Choice</a>.
+  image: pubs/pmm.png
+
+- title: Bayesian optimization of nanoporous materials
+  authors: A. Deshwal, C. Simon, J. R. Doppa
+  journal: "Molecular Systems Design & Engineering"
+  year: 2021
+  url: https://doi.org/10.1039/D1ME00093D
+  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/60e8e7e4551cb02a05ae0c32">preprint</a>.
+  image: pubs/bo.png
+
+- title: "Non-injective gas sensor arrays: identifying undetectable composition changes"
+  authors: N. Gantzler*, A. Henle*, P. Thallapally, X. Fern, C. Simon. * => equal contribution
+  journal: "Journal of Physics: Condensed Matter"
+  year: 2021
+  url: https://doi.org/10.1088/1361-648X/ac1e49
+  image: pubs/unresponsive_qcm_mof.png
+  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/6116b1054cb479355b2e6f34">preprint</a>.
+
+- title: Recommendation System to Predict Missing Adsorption Properties of Nanoporous Materials
+  authors: A. Sturluson, A. Raza, G. McConachie, D. Siderius, X. Fern, C. Simon
+  journal: Chemistry of Materials
+  year: 2021
+  url: https://doi.org/10.1021/acs.chemmater.1c01201
+  image: pubs/rec_sys.png
+  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c757ab337d6cfa42e2906d">preprint</a>.
+
+- title: "Adsorbed xenon propellant storage: are nanoporous materials worth the weight?"
+  authors: M. T. Huynh, N. Gantzler, S. Hough, D. Roundy, P. K. Thallapally, C. M. Simon
+  journal: Materials Advances
+  year: 2021
+  url: https://pubs.rsc.org/en/Content/ArticleLanding/2021/MA/D1MA00167A
+  image: pubs/xe_propellant_storage.png
+
+- title: Evaluating the Fitness of Combinations of Adsorbents for Quantitative Gas Sensor Arrays
+  authors: R. Sousa, C. Simon
+  journal: ACS Sensors
+  year: 2020
+  url: https://pubs.acs.org/doi/10.1021/acssensors.0c02014
+  image: pubs/sensor_graphic2.png
+  other: <a href="https://chemrxiv.org/articles/preprint/Evaluating_the_Fitness_of_Combinations_of_Adsorbents_for_Quantitative_Gas_Sensor_Arrays/12971171">preprint</a>, <a href="https://twitter.com/CoryMSimon/status/1336022834477289472">poster</a>.
+
+- title: Statistical mechanical model of gas adsorption in a metal-organic framework harboring a rotaxane molecular shuttle
+  authors: J. Carney, D. Roundy, C. Simon
+  journal: Langmuir
+  year: 2020
+  url: https://doi.org/10.1021/acs.langmuir.0c02839
+  image: pubs/rms-mof-toc.png
+  other: <a href="https://chemrxiv.org/articles/Statistical_Thermodynamic_Model_of_Gas_Adsorption_in_a_Metal-Organic_Framework_Harboring_a_Rotaxane_Molecular_Shuttle/9942095">preprint</a>, <a href="https://twitter.com/CoryMSimon/status/1336026252495319041">poster</a>.
+
+
+- title: Message passing neural networks for partial charge assignment to metal-organic frameworks
+  authors: A. Raza, A. Sturluson, C. Simon, X. Fern
+  journal: Journal of Physical Chemistry C
+  year: 2020
+  url: https://doi.org/10.1021/acs.jpcc.0c04903
+  other: <a href="https://chemrxiv.org/articles/Message_Passing_Neural_Networks_for_Partial_Charge_Assignment_to_Metal-Organic_Frameworks/12298487">preprint</a>. <a href="https://youtu.be/im7vktesCsw">talk</a>.
+  image: pubs/mpnn.png
+  
+- title: The SIR dynamic model of infectious disease transmission and its analogy with chemical kinetics
+  authors: C. Simon
+  journal: PeerJ Physical Chemistry
+  year: 2020
+  url: https://peerj.com/articles/pchem-14/
+  other: <a href="https://chemrxiv.org/articles/The_SIR_Dynamic_Model_of_Infectious_Disease_Transmission_from_the_Viewpoint_of_a_Chemical_Engineer/12021342">preprint</a>. <a href="https://youtu.be/-qdYxB51H-M">talk</a>.
+  image: pubs/sir.png
+
+- title: Curating metal-organic frameworks to compose robust gas sensor arrays in dilute conditions
+  authors: A. Sturluson, R. Sousa, Y. Zhang, M. T. Huynh, C. Laird, A. H. York, C. Silsby, C. H. Chang, C. Simon
+  journal: "ACS Applied Materials & Interfaces"
+  year: 2020
+  url: https://doi.org/10.1021/acsami.9b16561
+  other: <a href="https://chemrxiv.org/articles/Curating_Metal-Organic_Frameworks_to_Compose_Robust_Gas_Sensor_Arrays_in_Dilute_Conditions/8179244">preprint</a>. <a href="https://today.oregonstate.edu/news/research-zeroing-electronic-nose-monitoring-air-quality-diagnosing-disease">OSU News</a>.
+  image: pubs/sensor_arrays.png
+
+
+- title: Understanding Gas Storage in Cuboctahedral Porous Coordination Cages
+  authors: G. Lorzing, E. Gosselin, B. Trump, A. H. York, A. Sturluson, C. Rowland, G. P. A. Yap, C. M. Brown, C. Simon, E. D. Bloch
+  journal: Journal of the American Chemical Society
+  year: 2019
+  url: https://doi.org/10.1021/jacs.9b05872
+  image: pubs/Mo_cuboctahedralcage.jpg
+
+- title: The Role of Molecular Modeling and Simulation in the Discovery and Deployment of Metal-Organic Frameworks for Gas Storage and Separation
+  authors: A. Sturluson, M. T. Huynh, A. Kaija, C. Laird, S. Yoon, F. Hou, Z. Feng, C. Wilmer, Y. Colon, Y. Chung, D. Siderius, C. Simon
+  journal: Molecular Simulation 
+  year: 2019
+  url: https://www.tandfonline.com/doi/full/10.1080/08927022.2019.1648809
+  other: <a href="https://chemrxiv.org/articles/The_Role_of_Molecular_Modeling_Simulation_in_the_Discovery_and_Deployment_of_Metal-Organic_Frameworks_for_Gas_Storage_and_Separation/7854980">preprint</a>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6774364/">open access PMC version</a>.
+  image: pubs/MOF_schematic_not_pillared.png
+
+- title: "Eigencages: Learning a latent space of porous cage molecules"
+  authors: A. Sturluson, M. T. Huynh, A. H. York, C. Simon
+  journal: ACS Central Science
+  year: 2018
+  url: http://dx.doi.org/10.1021/acscentsci.8b00638
+  image: pubs/green_cage_light.png
+  other: <a href="https://today.oregonstate.edu/news/machine-learning-research-osu-unlocking-molecular-cages%E2%80%99-energy-saving-potential">OSU News</a>.
+
+- title: Multi- and instabilities in gas partitioning between nanoporous materials and rubber balloons
+  authors: C. Simon, C. Carraro
+  journal: "Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences"
+  year: 2018
+  url: https://doi.org/10.1098/rspa.2018.0703
+  image: pubs/balloonsetup.png
+  other: <a href="https://chemrxiv.org/articles/Multi-_and_In-Stabilities_in_Gas_Partitioning_Between_Nanoporous_Materials_and_Rubber_Balloons/7135928">preprint</a>.
+
+- title: High-Throughput Computational Screening of Multivariate Metal-Organic Frameworks (MTV-MOFs) for CO<sub>2</sub> Capture
+  authors: S. Li, Y. Chung, C. Simon, R. Snurr
+  journal: The Journal of Physical Chemistry Letters
+  year: 2018
+  url: http://dx.doi.org/10.1021/acs.jpclett.7b02700
+  image: pubs/Song.jpg
+
+- title: Xenon Gas Separation and Storage using Metal Organic Frameworks
+  authors: D. Banerjee, C. Simon, S. Elsaidi, M. Haranczyk, P. Thallapally
+  journal: Chem
+  year: 2018
+  url: https://doi.org/10.1016/j.chempr.2017.12.025
+  image: pubs/xekrreview.jpg
+
+- institution: University of California, Berkeley
+
+- title: Statistical mechanical model of gas adsorption in porous crystals with dynamic moieties
+  authors: C. Simon, E. Braun, C. Carraro, B. Smit
+  journal: Proceedings of the National Academy of Sciences
+  year: 2017
+  url: http://dx.doi.org/10.1073/pnas.1613874114
+  image: pubs/model.png
+
+- title: Adsorbate-induced lattice deformation in the IRMOF-74 series
+  authors: S. Jawahery, C. Simon, E. Braun, M. Witman, D. Tiana, B. Vlaisavljevich, B. Smit
+  journal: Nature Communications
+  year: 2017
+  url: http://www.nature.com/articles/ncomms13945
+  image: pubs/pt1bar.png
+
+- title: Effect of Ring Rotation upon Gas Adsorption in SIFSIX-3-M (M = Fe, Ni) Pillared Square Grid Network
+  authors: S. K. Elsaidi, M. H. Mohamed, C. Simon, E. Braun, T. Pham, K. A. Forrest, W. Xu, D. Banerjee, B. Space, M. J. Zaworotko, P. K. Thallapally
+  journal: Chemical Science
+  year: 2017
+  url: http://dx.doi.org/10.1039/C6SC05012C
+  image: pubs/sif6.png
+
+- title: "The Materials Genome in Action: Identifying the Performance Limits of Physical Hydrogen Storage"
+  authors: Aaron W Thornton, Cory M Simon, Jihan Kim, Ohmin Kwon, Kathryn S Deeg, Kristina Konstas, Steven J Pas, Matthew R Hill, David A Winkler, Maciej Haranczyk, Berend Smit
+  journal: Chemistry of Materials
+  year: 2017
+  url: http://dx.doi.org/10.1021/acs.chemmater.6b04933
+  image: pubs/aaron.png
+
+- title: Noria, a highly Xe-selective Nanoporous Organic Solid
+  authors: R. Patil, D. Banerjee, C. Simon, J. Atwood, P. Thallapally
+  journal: Chemistry- A European Journal
+  year: 2016
+  url: http://dx.doi.org/10.1002/chem.201602131
+  image: pubs/2.png
+
+- title: Metal-Organic Framework with Optimal Adsorption, Separation, and Selectivity towards Xenon
+  authors: D. Banerjee, C. Simon, A. Plonka, R. Motkuri, J. Liu, X. Chen, B. Smit, J. Parise, M. Haranczyk, P. Thallapally
+  journal: Nature Communications
+  year: 2016
+  url: http://dx.doi.org/10.1038/ncomms11831
+  image: pubs/sbmof1.png
+
+- title: Impact of the strength and spatial distribution of adsorption sites on methane deliverable capacity in nanoporous materials
+  authors: D. Gomez-Gualdron, C. Simon, W. Lassman, D. Chen, R. L. Martin, M. Haranczyk, O. K. Farha, B. Smit, R. Q. Snurr
+  journal: Chemical Engineering Science
+  year: 2016
+  url: http://dx.doi.org/10.1016/j.ces.2016.02.030
+  image: pubs/irmof10_3.png
+
+- title: "pyIAST: Ideal Adsorbed Solution Theory (IAST) Python package"
+  authors: C. Simon, B. Smit, M. Haranczyk 
+  journal: Computer Physics Communications
+  year: 2016
+  url: http://dx.doi.org/doi:10.1016/j.cpc.2015.11.016
+  image: pubs/pyIAST_logo.png
+
+- title: What Are the Best Materials To Separate a Xenon/Krypton Mixture?
+  authors: C. Simon, R. Mercado, S. K. Schnell, B. Smit, and M. Haranczyk
+  journal: Chemistry of Materials
+  year: 2015
+  url: http://dx.doi.org/10.1021/acs.chemmater.5b01475
+  image: pubs/TOC.jpg
+
+- title: "The Materials Genome in Action: Identifying the Performance Limits to Methane Storage"
+  authors: C. Simon, J. Kim, D. Gomez-Gualdron, J. Camp, Y. Chung, R. L. Martin, R. Mercado, M.W. Deem, D. Gunter, M. Haranczyk, D. Sholl, R. Snurr, B. Smit
+  journal: "Energy & Environmental Science"
+  year: 2015
+  url: http://dx.doi.org/10.1039/C4EE03515A
+  image: pubs/Cover_3_630m.jpg
+
+- title: In Silico Discovery of High Deliverable Capacity Metal-Organic Frameworks
+  authors: Y. Bao, R. L. Martin, C. Simon, M. Haranczyk, B. Smit, and M.W. Deem
+  journal: Journal of Physical Chemistry C
+  year: 2014
+  url: http://dx.doi.org/10.1021/jp5123486
+  image: pubs/deemyi.png
+
+- title: Kinetically tuned dimensional augmentation as a versatile synthetic route towards robust metal-organic frameworks
+  authors: D. Feng, K. Wang, Z. Wei, Y.P. Chen, C. Simon, R. Arvapally, R.L. Martin, M. Bosch, T.F. Liu, S. Fordham, D. Yuan, M.A. Omary, M. Haranczyk, B. Smit, H.C. Zhou
+  journal: Nature Communications
+  year: 2014
+  url: http://dx.doi.org/10.1038/ncomms6723
+  image: pubs/zhou.png
+
+- title: In silico Design of Three-Dimensional Porous Covalent Organic Frameworks via Known Synthesis Routes and Commercially Available Species
+  authors: R. L. Martin, C. Simon, B. Medasani, D. Britt, B. Smit, and M. Haranczyk
+  journal: Journal of Physical Chemistry C
+  year: 2014
+  url: http://dx.doi.org/10.1021/jp507152j
+  image: pubs/TAM258.png
+
+- title: "In silico design of porous polymer networks: high-throughput screening for methane storage materials"
+  authors: R. L. Martin, C. Simon, B. Smit, M. Haranczyk 
+  journal: Journal of the American Chemical Society
+  year: 2014
+  url: http://dx.doi.org/10.1021/ja4123939
+  image: pubs/best_PPN.png
+
+- title: Optimizing nanoporous materials for gas storage
+  authors: C. Simon, J. Kim, L.C. Lin, R.L. Martin, M. Haranczyk, B. Smit
+  journal: Physical Chemistry Chemical Physics
+  year: 2014
+  url: http://dx.doi.org/10.1039/C3CP55039G
+  image: pubs/pccp.png
+
+- title: Modeling Methane Adsorption in Interpenetrating Porous Polymer Networks
+  authors: R. L. Martin, M.N. Shahrak, J. Swisher, C. Simon, J. Sculley, H. C. Zhou, B. Smit, and M. Haranczyk
+  journal: Journal of Physical Chemistry C
+  year: 2013
+  url: http://dx.doi.org/10.1021/jp406918d
+  image: pubs/abst.gif
+
+- institution: Okinawa Institute of Science and Technology
+
+- title: The role of dendritic spine morphology in the compartmentalization and delivery of surface receptors
+  authors: C. Simon, I. Hepburn, W. Chen, E. De Schutter
+  journal: Journal of Computational Neuroscience
+  year: 2013
+  url: http://dx.doi.org/10.1007/s10827-013-0482-4
+  image: pubs/overall3.png
+
+- institution: University of British Columbia
+
+- title: Pattern formation of Rho GTPases in single cell wound healing
+  authors: C. Simon, E. Vaughan, W. Bement, and L. Edelstein-Keshet
+  journal: Molecular Biology of the Cell
+  year: 2013
+  url: http://dx.doi.org/10.1091/mbc.E12-08-0634
+  image: pubs/wounds.png
+
+- title: A variational approach to modeling aircraft hoses and flexible conduits
+  authors: K. Han, H. Hu, E. Ko, O. Ozer, C. Simon, C. Tan
+  journal: Mathematics-in-Industry Case Studies
+  year: 2012
+  url: http://www.fields.utoronto.ca/journalarchive/mics/52-35.pdf
+  image: pubs/conduits.png
+
+- institution: Virginia Tech
+
+- title: A mathematical model to distinguish the sociological and biological susceptibility factors in disease transmission in the context of H1N1/09 influenza
+  authors: C. Simon, N. Yosinao
+  journal: Journal of Theoretical Biology
+  year: 2011
+  url: http://dx.doi.org/10.1016/j.jtbi.2011.07.008
+  image: pubs/betas.png

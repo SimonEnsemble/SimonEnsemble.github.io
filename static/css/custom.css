@@ -6,29 +6,38 @@
   flex: 1 1;
 }
 
+.flex-pubs {
+  flex: 1 1.5;
+}
+
 .flex-wrap {
   flex-wrap: wrap;
 }
 
-.markdown {
-  // {{< columns >}}
-  .book-columns {
-    margin-left: -$padding-16;
-    margin-right: -$padding-16;
+.markdown-inner {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 90%;
+    padding: 1rem 1rem;
+}
 
-    > div {
-      margin: $padding-16 0;
-      min-width: $body-min-width / 2;
-      padding: 0 $padding-16;
-    }
-  }
-   // {{< hint >}}
-  .book-hint {
-    @each $name, $color in $hint-colors {
-      &.#{$name} {
-        border-color: $color;
-        background-color: rgba($color, 0.1);
-      }
-    }
-  }
+.book-columns {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.pub-left {
+    width: 35%;
+    align: center;
+}
+.pub-right {
+    width: 65%;
+}
+
+.myhint {
+    background-color: green;
+}
+
+.myhint {
+    border-color: green;
 }
