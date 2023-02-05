@@ -1,7 +1,26 @@
+{{ $img0 := resources.Get ( .Get "img0" ) }}
+{{ $img0 := $img0.Resize "300x" }}
+{{ $img1 := resources.Get ( .Get "img1" ) }}
+{{ $img1 := $img1.Resize "300x" }}
+{{ $img2 := resources.Get ( .Get "img2" ) }}
+{{ $img2 := $img2.Resize "300x" }}
+
 <div class="book-columns flex flex-wrap">
-{{ range split .Inner "<--->" }}
+{{ range $id, $col_content := (split .Inner "<--->") }}
   <div class="flex-even markdown-inner">
-    {{ . | $.Page.RenderString }}
+      <center>
+     {{ if eq $id 0 }}
+        <img src="{{ $img0.RelPermalink }}" height="140"/>
+     {{ end }}
+     {{ if eq $id 1 }}
+        <img src="{{ $img1.RelPermalink }}" height="140"/>
+     {{ end }}
+     {{ if eq $id 2 }}
+        <img src="{{ $img2.RelPermalink }}" height="140"/>
+     {{ end }}
+      </center>
+
+    {{ $col_content | $.Page.RenderString }}
   </div>
 {{ end }}
 </div>
