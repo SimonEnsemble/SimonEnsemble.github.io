@@ -1,4 +1,7 @@
+
 ## cory simon
+
+:wave: 
 
 {{< person-photo photo="ppl_photos/cory.png" >}}
 
@@ -16,8 +19,3 @@ digs hiking/backpacking, snowboarding, wine, films, and Starcraft.
 e: Cory.Simon [at] oregonstate.edu \
 t: @CoryMSimon \
 o: Kelley Engineering Center 2045
-
-{{< hint >}}
-    hi
-{{< /hint >}}
-

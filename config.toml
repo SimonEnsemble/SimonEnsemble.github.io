@@ -2,7 +2,7 @@ baseURL = 'http://example.org/'
 theme = "cactus"
 languageCode = 'en-us'
 title = 'The Simon Research Ensemble'
-
+enableEmoji = true
 [params]
   colortheme = "white" # dark, light, white, or classic
   description = "we are a mathematical and computational research group at Oregon State University, within the School of Chemical, Biological, and Environmental Engineering."
@@ -11,6 +11,7 @@ title = 'The Simon Research Ensemble'
   postsOnHomePage = 5
   css = ["css/custom.css"]
   logo="trees.png"
+  mathjax = true
 
 # Main menu which appears below site header.
 [[menu.main]]
