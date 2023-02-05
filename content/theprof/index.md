@@ -1,6 +1,6 @@
 ## cory simon
 
-{{< person-photo cory.png >}}
+{{< person-photo photo="ppl_photos/cory.png" >}}
 
 assistant professor. \
 Ph.D. Chemical Engineering. UC Berkeley.
@@ -16,3 +16,8 @@ digs hiking/backpacking, snowboarding, wine, films, and Starcraft.
 e: Cory.Simon [at] oregonstate.edu \
 t: @CoryMSimon \
 o: Kelley Engineering Center 2045
+
+{{< hint >}}
+    hi
+{{< /hint >}}
+
