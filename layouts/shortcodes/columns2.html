@@ -1,0 +1,12 @@
+{{ $img0 := resources.Get "research/bsi.png" }}
+{{ $img0 := $img0.Fill "200x200" }}
+
+<div class="book-columns flex flex-wrap">
+{{ range $id, $col_content := (split .Inner "<--->") }}
+  <div class="flex-even markdown-inner">
+        <img src="{{ $img0.RelPermalink }}" height="150"/>
+
+        {{ $col_content | $.Page.RenderString }}
+  </div>
+{{ end }}
+</div>

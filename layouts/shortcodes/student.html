@@ -1,6 +1,8 @@
 <h2>{{ .Get "name" }}</h2>
 
-<img src="/ppl_photos/{{ .Get "photo" }}" height="200" width="200" style="border-radius: 50%;"/>
+{{ $image := resources.Get ( .Get "photo" ) }}
+{{ $image := $image.Fill "200x200" }}
+<img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 50%;"/>
 
 <div><br /></div>
 

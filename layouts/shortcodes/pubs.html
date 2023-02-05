@@ -1,0 +1,14 @@
+{{ range $.Site.Data.pubs }}
+        {{ $image := resources.Get ( .image ) }}
+        {{ $image := $image.Resize "500x" }}
+        <img src="{{ $image.RelPermalink }}" width="100"/>
+
+
+        "{{ .title }}"<br>
+        {{ .authors }}<br>
+        <div>
+           <i>{{ .journal }}</i>. {{ .year }}. 
+           <a href="{{ .url }}">link</a>
+        </div>
+        <div><br><br></div>
+{{ end }} 
