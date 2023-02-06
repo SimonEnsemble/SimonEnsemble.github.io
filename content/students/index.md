@@ -57,7 +57,7 @@
     degree="Chemical Engineering"
     about="My favorite activity is biking while listening to music. My favorite book is The Sirens of Titan."
     research="Using kernel functions as a similarity metric between pairs of molecules for machine learning tasks."
-    photo="ppl_photos/daniel.jpg"
+    photo="ppl_photos/daniel.png"
 >}}
 
 {{< student 
@@ -65,7 +65,7 @@
     degree="Chemical Engineering"
     research="Using thermodynamic models and optimization algorithms to maximizeproduction from water harvesters."
     about="My interests include process simulation, data science, and Magic the Gathering"
-    photo="ppl_photos/sebastian.jpg"
+    photo="ppl_photos/sebastian.png"
 >}}
 
 # alums
