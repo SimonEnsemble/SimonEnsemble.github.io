@@ -54,7 +54,7 @@ The expression inside the brackets $[\cdot]^2$ is $w$. Intuitively, $w$ is a lin
 
 Finally, our expression $A(h)$ for the truncated square pyramidal tank completes the dynamic, differential equation model for the liquid level $h$ in the tank:
 $$\left[\frac{h}{H} L_t + \left(1-\frac{h}{H}\right)L_b \right]^2 \dfrac{dh}{dt}= q_i - c\sqrt{h}$$
-This differential equation is non-linear. The solution $h(t)$ for a given initial condition $h(t=0)$ and input flow scheme $q_i(t)$ can be obtained numerically e.g. through [DifferentialEquations.jl](http://docs.juliadiffeq.org/latest/).
+This differential equation is non-linear. The solution $h(t)$ for a given initial condition $h(t=0)$ and input flow scheme $q_i(t)$ can be obtained numerically e.g. through [DifferentialEquations.jl](https://docs.sciml.ai/DiffEqDocs/stable/).
 
 ## Numerical solution
 
