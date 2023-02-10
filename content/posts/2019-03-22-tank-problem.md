@@ -54,64 +54,59 @@ The expression inside the brackets $[\cdot]^2$ is $w$. Intuitively, $w$ is a lin
 
 Finally, our expression $A(h)$ for the truncated square pyramidal tank completes the dynamic, differential equation model for the liquid level $h$ in the tank:
 $$\left[\frac{h}{H} L_t + \left(1-\frac{h}{H}\right)L_b \right]^2 \dfrac{dh}{dt}= q_i - c\sqrt{h}$$
-This differential equation is non-linear. The solution $h(t)$ for a given initial condition $h(t=0)$ and input flow scheme $q_i(t)$ can be obtained numerically e.g. through [DifferentialEquations.jl](https://docs.sciml.ai/DiffEqDocs/stable/).
+This differential equation is non-linear. The solution $h(t)$ for a given initial condition $h(t=0)$ and input flow scheme $q_i(t)$ can be obtained numerically e.g. through [OrdinaryDiffEq.jl](https://docs.sciml.ai/DiffEqDocs/stable/).
 
 ## Numerical solution
 
-Let's write code in Julia and use DifferentialEquations.jl to numerically approximate the solution to our tank problem when the tank is initially empty ($h(t=0)=0$) and liquid flows into the tank at a constant rate.
+Let's write code in Julia and use `OrdinaryDiffEq.jl` to numerically approximate the solution to our tank problem when the tank is initially empty ($h(t=0)=0$) and liquid flows into the tank at a constant rate.
 
 First, we load some packages and define our parameters.
 ```julia
-using DifferentialEquations
-using PyPlot # for plotting
-using LaTeXStrings # for LaTeX strings in plots
-
-# dope plot style
-PyPlot.matplotlib[:style][:use]("Solarize_Light2") 
+using OrdinaryDiffEq, CairoMakie
 
 # specify tank geometry
-H = 4.0 # tank height, m
+H = 4.0  # tank height, m
 Lb = 5.0 # bottom base length, m
 Lt = 2.0 # top base length, m
 
 # specify resistance to flow
-c = 1.0 # awkward units
+c = 1.0  # awkward units
 
-# inlet flow rate (could be funciton of time)
+# inlet flow rate (constant)
 qᵢ = 1.5 # m³/s
 
 # initial liquid level
 h₀ = 0.0 
 ```
 
-Second, we use DifferentialEquations.jl to numerically solve the ODE.
+Second, we use `OrdinaryDiffEq.jl` to numerically solve the ODE.
 
 ```julia
-tspan = (0.0, 150.0) # solve for 0 s to 150 s
+tspan = (0.0, 155.0) # solve for 0 s to 150 s
 
 # area from a helicopter view, m²
-A(h, Lt, Lb, H) = (h/H * Lt + (1 - h/H) * Lb) ^ 2
+A(h) = (h/H * Lt + (1 - h/H) * Lb) ^ 2
 
 # right-hand-side of ODE
-rhs(h, p, t) = (qᵢ - c * sqrt(h)) / A(h, Lt, Lb, H)
+rhs(h, _, t) = (qᵢ - c * sqrt(h)) / A(h)
 
-# DifferentialEquations.jl syntax
+# OrdinaryDiffEq.jl syntax
 prob = ODEProblem(rhs, h₀, tspan)
-sol = solve(prob)
+h = solve(prob, Tsit5())
 ```
 
 We next plot the solution.
 
 ```julia
-t = range(0.0, stop=tspan[2], length=300)
+ts = range(0.0, stop=152, length=300)
 # easy as this to compute solution at an array of times!
-h = sol.(t) 
+hs = h.(ts)
 
-figure()
-axhline(y=H, linestyle="--", color="k")
-xlabel(L"$t$, time [s]")
-ylabel(L"$h$, liquid level [m]")
-plot(t, h, lw=3, color="orange")
+fig = Figure()
+ax  = Axis(fig[1, 1], xlabel="time, t [s]", ylabel="liquid level, h(t) [m]")
+lines!(ts, hs, linewidth=4)
+hlines!(H, linestyle=:dash)
+xlims!(0, 151)
 ```
 
 {{< figure src="/blog/tank_prob/numerical_soln.png" width="100%">}}
