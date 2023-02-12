@@ -1,6 +1,6 @@
 ---
-title: the freely jointed chain model
 date: 2017-10-6
+title: the freely jointed chain model
 tags: 
     - statistical mechanics
 ---
@@ -141,7 +141,7 @@ That is, as the polymer approaches full extension, it gets progressively more di
 # Entropy as a function of $x$
 If we tether both ends of the polymer to fixed positions in space, how does the entropy vary with $x$? 
 
-# Method 1
+### Method 1
 The entropy is given by the Boltzmann equation:
 $$S(x)=k_B \log [\Omega(x)],$$
 where $\Omega(x)$ is the number of microstates compatible with end-to-end length $x$. We can count such microstates using an integral with a delta function:
