@@ -1,5 +1,6 @@
 ---
 title: surface tension catapults in mushrooms
+date: 2018-11-28
 tags: 
     - biology
     - thermodynamics

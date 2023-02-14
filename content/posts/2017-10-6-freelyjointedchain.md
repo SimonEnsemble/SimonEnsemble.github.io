@@ -1,9 +1,10 @@
 ---
-date: 2017-10-6
 title: the freely jointed chain model
+date: 2017-10-06
 tags: 
-    - statistical mechanics
+    - stat mech
 ---
+
 _author_: Cory Simon
 
 Single-molecule force spectroscopy is a technique to gauge the binding forces within and mechanical properties of biopolymers. For example, consider a DNA unzipping experiment. At the end of a double-stranded DNA molecule, one strand is tethered to a fixed position, and the other, complementary strand is attached to a microsphere under an optical trap. Then, the two strands are pulled apart, and the force is measured as the hydrogen bonds between base pairs break and the DNA molecule unzips.
