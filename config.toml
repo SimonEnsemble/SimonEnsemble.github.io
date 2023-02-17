@@ -34,6 +34,11 @@ url = "/pubs"
 weight = 1
 
 [[menu.main]]
+name = "news"
+url = "/news"
+weight = 1
+
+[[menu.main]]
 name = "teaching"
 url = "/teaching"
 weight = 1
