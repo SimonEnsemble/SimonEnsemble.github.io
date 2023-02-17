@@ -5,13 +5,17 @@ title = 'The Simon Research Ensemble'
 enableEmoji = true
 [params]
   colortheme = "white" # dark, light, white, or classic
-  description = "we are a mathematical and computational research group at Oregon State University, within the School of Chemical, Biological, and Environmental Engineering."
-  mainSectionTitle = "Blog"
+  description = "we are a mathematical and computational research group at Oregon State University, in the School of Chemical, Biological, and Environmental Engineering."
+  mainSectionTitle = " "
   showAllPostsOnHomePage = false
-  postsOnHomePage = 5
+  showAllPostsArchive = true
+  postsOnHomePage = 0
   css = ["css/custom.css"]
   logo="trees.png"
-  mathjax = true
+  mathjax = true 
+  [params.comments]
+    enabled = true
+    disqusShortname = "CoryMSimon"
 
 # Main menu which appears below site header.
 [[menu.main]]
@@ -27,6 +31,11 @@ weight = 1
 [[menu.main]]
 name = "pubs"
 url = "/pubs"
+weight = 1
+
+[[menu.main]]
+name = "teaching"
+url = "/teaching"
 weight = 1
 
 [[menu.main]]
