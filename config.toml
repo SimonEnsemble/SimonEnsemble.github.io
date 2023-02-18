@@ -1,5 +1,5 @@
-baseURL = "https://simonensemble.github.io/hugo_website"
-theme = "cactus"
+baseURL = "https://simonensemble.github.io"
+theme = "hugo-theme-cactus"
 languageCode = 'en-us'
 title = 'The Simon Research Ensemble'
 enableEmoji = true
