@@ -23,6 +23,12 @@ Ping led a project to build a machine learning model that classifies the toxicit
 
 {{< figure src="/ppl_photos/ping.jpeg" width="50%">}}
 
+## Chalkdust article on Squid Game
+
+Cory, Adrian, Nick, and FX Coudert published a probabilistic analysis of the bridge game in the popular TV show Netflix, in _Chalkdust Magazine_. check it out [here](https://chalkdustmagazine.com/features/surviving-the-bridge-in-squid-game/).
+
+{{< figure src="/squidgame.png" width="50%">}}
+
 ## Melanie enrolls in Chemical Engineering PhD program at UC Berkeley, awarded an NSF GRFP
 
 Melanie Huynh is officially headed to Berkeley in the fall to pursue her PhD in Chemical Engineering! And, she was awarded the NSF [GRFP](https://www.nsfgrfp.org)! Huge congratulations, Melanie!

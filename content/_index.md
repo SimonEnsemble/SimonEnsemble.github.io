@@ -26,7 +26,7 @@ to predict the properties of molecules and materials
     img2="research/toymodels.png"
 >}}
 ## electronic noses
-computational design; machine-learning their response patterns
+computational design; machine learning to interpret their response patterns
 
 <--->
 ## molecular simulation

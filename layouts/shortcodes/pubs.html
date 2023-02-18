@@ -3,10 +3,10 @@
     <h2> @ {{ . }} </h2>
     {{ else }}
         {{ $image := resources.Get ( .image ) }}
-        {{ $image := $image.Resize "500x" }}
+        {{ $image := $image.Fit "350x350" }}
         <div class="flex flex-even">
             <div class="pub-left">
-                <img src="{{ $image.RelPermalink }}" width="140"/>
+                <img src="{{ $image.RelPermalink }}" width="150"/>
             </div>
 
             <div class="pub-right">
@@ -19,5 +19,6 @@
                 <div><br><br></div>
             </div>
         </div>
+        <hr>
     {{ end }} 
 {{ end }} 

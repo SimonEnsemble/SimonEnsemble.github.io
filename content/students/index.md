@@ -5,7 +5,7 @@
   degree="B.S. Physics, B.S. Applied Mathematics, The University of Akron."
   about="In my free time, I enjoy playing guitar and going to bar trivia. I also really like Japanese media and culture. Some of my favorite animation artists include Hayao Miazaki, Makoto Shinkai, and Satoshi Kon."
   research="using molecular models and simulations to discover materials for gas separations"
-  photo="ppl_photos/nick.jpg"
+  photo="/ppl_photos/nick.jpg"
 >}}
 
 {{< student 
@@ -13,7 +13,7 @@
   degree="B.S. Chemistry, Seattle University. B.S. Computer Science, Oregon State University. M.S. Chemistry, University of Oregon."
   about="I enjoy skiing, hiking, gardening, and cats, but my raison d'être is raising my daughter, Sophie, with my wife, Samantha. A secondary obsession of mine is finding questionably utile applications of microcontrollers in everyday life."
   research="applying machine learning to enable high-throughput prediction of porous material properties."
-  photo="ppl_photos/adrian.png"
+  photo="/ppl_photos/adrian.png"
 >}}
 
 {{< student 
@@ -21,7 +21,7 @@
   degree="B. Tech Industrial Chemistry."
   about="I have a soft spot for fitness and good music. Good food will be preferable with the music too."
   research="leveraging machine learning and mathematical models to improve gas sensors"
-  photo="ppl_photos/gbenga.png"
+  photo="/ppl_photos/gbenga.png"
 >}}
 
 {{< student 
@@ -29,7 +29,7 @@
   degree="B.S. Chemistry, B.S. Applied Mathematics, The Evergreen State College."
   about="When not on campus, you’ll find me playing competitive racquetball on the OSU team, cruising around on a loud motorcycle, painting, and getting lost in the woods. I like to think my home away from home is alongside the elk and rain in the Olympic National Forest."
   research="developing mathematical models and machine learning algorithms to improve and curate nanoporous materials for gas sensor arrays."
-  photo="ppl_photos/paul_morris.png"
+  photo="/ppl_photos/paul_morris.png"
 >}}
 
 
@@ -39,7 +39,7 @@
     degree="B.S. Chemical Engineering, M.S. Polymer Engineering, Sharif University of Technology." 
     about="I enjoy playing tennis with friends, discovering scenic places in nature, and teaching myself to play piano." 
     research="applying data science to engineering problems, using matrix factorization with graph regularization to predict mixture properties." 
-    photo="ppl_photos/diba.jpg"
+    photo="/ppl_photos/diba.jpg"
 >}}
 
 # ugrad students
@@ -49,7 +49,7 @@
   degree="Bioengineering"
   about="I enjoy rock climbing, baking, listening to new music, most arts and crafts, and just trying new things in general."
   research="mathematical modeling of Mayan chultuns."
-  photo="ppl_photos/clayton.JPG"
+  photo="/ppl_photos/clayton.JPG"
 >}}
 
 {{< student 
@@ -57,7 +57,7 @@
     degree="Chemical Engineering"
     about="My favorite activity is biking while listening to music. My favorite book is The Sirens of Titan."
     research="Using kernel functions as a similarity metric between pairs of molecules for machine learning tasks."
-    photo="ppl_photos/daniel.png"
+    photo="/ppl_photos/daniel.png"
 >}}
 
 {{< student 
@@ -65,7 +65,7 @@
     degree="Chemical Engineering"
     research="Using thermodynamic models and optimization algorithms to maximizeproduction from water harvesters."
     about="My interests include process simulation, data science, and Magic the Gathering"
-    photo="ppl_photos/sebastian.png"
+    photo="/ppl_photos/sebastian.png"
 >}}
 
 # alums

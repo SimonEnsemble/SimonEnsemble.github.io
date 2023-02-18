@@ -1,9 +1,9 @@
 {{ $img0 := resources.Get ( .Get "img0" ) }}
-{{ $img0 := $img0.Resize "200x" }}
+{{ $img0 := $img0.Resize "500x" }}
 {{ $img1 := resources.Get ( .Get "img1" ) }}
-{{ $img1 := $img1.Resize "200x" }}
+{{ $img1 := $img1.Resize "500x" }}
 {{ $img2 := resources.Get ( .Get "img2" ) }}
-{{ $img2 := $img2.Resize "200x" }}
+{{ $img2 := $img2.Resize "500x" }}
 
 <div class="book-columns flex flex-wrap">
 {{ range $id, $col_content := (split .Inner "<--->") }}
