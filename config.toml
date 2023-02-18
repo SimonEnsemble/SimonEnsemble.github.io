@@ -1,4 +1,4 @@
-baseURL = "https://simonensemble.github.io"
+baseURL = "https://simonensemble.github.io/hugo_website"
 theme = "hugo-theme-cactus"
 languageCode = 'en-us'
 title = 'The Simon Research Ensemble'
