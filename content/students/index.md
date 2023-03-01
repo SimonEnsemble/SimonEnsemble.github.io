@@ -1,11 +1,11 @@
 # phd students
 
 {{< student 
- name="Nick Gantzler"
-  degree="B.S. Physics, B.S. Applied Mathematics, The University of Akron."
-  about="In my free time, I enjoy playing guitar and going to bar trivia. I also really like Japanese media and culture. Some of my favorite animation artists include Hayao Miazaki, Makoto Shinkai, and Satoshi Kon."
-  research="using molecular models and simulations to discover materials for gas separations"
-  photo="/ppl_photos/nick.jpg"
+name="Nick Gantzler"
+degree="B.S. Physics, B.S. Applied Mathematics, The University of Akron."
+about="In my free time, I enjoy playing guitar and going to bar trivia. I also really like Japanese media and culture. Some of my favorite animation artists include Hayao Miazaki, Makoto Shinkai, and Satoshi Kon."
+research="using molecular models and simulations to discover materials for gas separations"
+photo="/ppl_photos/nick.jpg"
 >}}
 
 {{< student 
@@ -32,7 +32,6 @@
   photo="/ppl_photos/paul_morris.png"
 >}}
 
-
 # ms students
 {{< student 
     name="Diba Behnoudfar" 
@@ -40,6 +39,16 @@
     about="I enjoy playing tennis with friends, discovering scenic places in nature, and teaching myself to play piano." 
     research="applying data science to engineering problems, using matrix factorization with graph regularization to predict mixture properties." 
     photo="/ppl_photos/diba.jpg"
+>}}
+
+# visiting phd students
+
+{{< student 
+  name="Gabriel Augusto"
+  degree="B. Tech Systems Analysis and Development, São Paulo State College of Technology; M.S. Applied Computing, National Institute for Space Research"
+  about="I enjoy traveling to new places and learning about different cultures. Also, I like listening to good songs and practicing sports in general."
+  research="neural networks, machine learning, self-supervised learning, and their applications in interdisciplinary problems."
+  photo="/ppl_photos/gabriel.jpg"
 >}}
 
 # ugrad students
@@ -67,6 +76,7 @@
     about="My interests include process simulation, data science, and Magic the Gathering"
     photo="/ppl_photos/sebastian.png"
 >}}
+
 
 # alums
 

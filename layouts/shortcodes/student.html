@@ -4,18 +4,18 @@
 {{ $image := $image.Fill "200x200" }}
 <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}" style="border-radius: 50%;"/>
 
-<div><br /></div>
+<div><br></div>
 
 {{ .Get "degree" }}
 
-<div><br /></div>
+<div><br></div>
 
 <div>
-<b>research interests:</b> {{ .Get "research" }}
+<i>research interests:</i> {{ .Get "research" }}
 </div>
    
-<div><br /></div>
+<div><br></div>
 
 <div>
-<b>about:</b> {{ .Get "about" }}
+<i>about:</i> {{ .Get "about" }}
 </div>
