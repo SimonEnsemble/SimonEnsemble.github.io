@@ -3,6 +3,8 @@ date: 2018-07-24
 title: Monte Carlo simulation of airline overbooking
 tags:
     - optimization
+aliases:
+    - /2018-07-24-airline-overbooking
 ---
 _authors_: Mira Khare, Melanie Huynh, Arni Sturluson, Cory Simon
 
