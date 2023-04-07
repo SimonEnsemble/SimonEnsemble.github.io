@@ -4,6 +4,8 @@ date: 2018-10-27
 tags: 
     - machine learning
     - linear algebra
+aliases:
+    - /2018-10-27-orthogonal-procrustes
 ---
 _author_: Cory Simon
 
