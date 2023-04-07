@@ -6,6 +6,8 @@ tags:
     - probability
     - combinatorics
     - estimation
+aliases:
+    - /2019-11-15-german-tank-problem
 ---
 _author_: Cory Simon
 
