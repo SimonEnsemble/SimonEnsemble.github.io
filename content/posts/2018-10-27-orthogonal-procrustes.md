@@ -6,6 +6,7 @@ tags:
     - linear algebra
 aliases:
     - /2018-10-27-orthogonal-procrustes
+    - /2018-10/orthogonal-procrustes.html
 ---
 _author_: Cory Simon
 
