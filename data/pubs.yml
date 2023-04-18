@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: A tutorial on the Bayesian statistical approach to inverse problems
+  authors: F. Waqar, S. Patel, C. Simon
+  journal: arXiv
+  year: 2023
+  url: https://arxiv.org/abs/2304.07610
+  image: pubs/bsi.png
+
 - title: A Bayesian treatment of the German tank problem
   authors: C. Simon
   journal: The Mathematical Intelligencer
