@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Data-driven imputation of miscibility of aqueous solutions via graph-regularized logistic matrix factorization
+  authors: D. Behnoudfar, C. Simon, J. Schrier
+  journal: ChemRxiv
+  year: 2023
+  url: https://chemrxiv.org/engage/chemrxiv/article-details/647b8ac8e64f843f41459b11
+  image: pubs/miscibility_mf.png
+
 - title: A tutorial on the Bayesian statistical approach to inverse problems
   authors: F. Waqar, S. Patel, C. Simon
   journal: arXiv
