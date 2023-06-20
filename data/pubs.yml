@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Multi-fidelity Bayesian Optimization of Covalent Organic Frameworks for Xenon/Krypton Separations
+  authors: N. Gantzler, A. Deshwal, J. Doppa, C. Simon
+  journal: ChemRxiv
+  year: 2023
+  url: https://chemrxiv.org/engage/chemrxiv/article-details/648f38efe64f843f41f9170c
+  image: pubs/mfbo.png
+
 - title: Data-driven imputation of miscibility of aqueous solutions via graph-regularized logistic matrix factorization
   authors: D. Behnoudfar, C. Simon, J. Schrier
   journal: ChemRxiv
