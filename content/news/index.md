@@ -1,3 +1,10 @@
+## Faaiq will enroll in PhD program in Electrical Engineering at Georgia Tech
+Faaiq Waqar is officially headed to Georgia Tech in the fall to pursue his PhD in Electrical Engineering! Huge congratulations, Faaiq!
+
+Faaiq, co-advised by Prof. Xiaoli Fern, worked on (i) applying graph neural networks to predict adsorption properties of nanoporous materials and (ii) a tutorial (with heat transfer experiments) on the Bayesian approach to inverse problems.
+
+{{< figure src="/ppl_photos/faaiq.jpeg" width="50%">}}
+
 ## Nick will intern at Sandia National Labs!
 
 This fall, PhD student Nick Gantzler will work at [Sandia National Labs](https://www.sandia.gov/) with [N. Scott Bobbitt](https://scholar.google.com/citations?user=--aL94AAAAAJ&hl=en) as an intern in the Computational Materials & Data Science Division! Congrats, Nick!
