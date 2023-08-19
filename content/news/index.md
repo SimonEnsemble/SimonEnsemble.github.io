@@ -1,7 +1,12 @@
-## Faaiq will enroll in PhD program in Electrical Engineering at Georgia Tech
-Faaiq Waqar is officially headed to Georgia Tech in the fall to pursue his PhD in Electrical Engineering! Huge congratulations, Faaiq!
+## Paul will intern at Los Alamos National Lab!
 
-Faaiq, co-advised by Prof. Xiaoli Fern, worked on (i) applying graph neural networks to predict adsorption properties of nanoporous materials and (ii) a tutorial (with heat transfer experiments) on the Bayesian approach to inverse problems.
+as a PhD intern for Los Alamos National Lab, Paul Morris will use the Quick Urban & Industrial Complex (QUIC) Dispersion Modeling System to simulate the dispersion of chemical plumes in realistic, urban environments and use machine learning to create better wind and plume libraries.
+this work, combining Paul's expertise in chemical engineering and machine learning, will be a pivotal component of his PhD thesis.
+
+{{< figure src="/ppl_photos/paul_at_lab.png" width="50%">}}
+
+## Faaiq will enroll in PhD program in Electrical Engineering at Georgia Tech
+Faaiq Waqar is officially headed to Georgia Tech in the fall to pursue his PhD in Electrical Engineering! Huge congratulations, Faaiq! also Faaiq was awarded an NSF fellowship [see [here](https://engineering.oregonstate.edu/all-stories/nsf-awards-graduate-research-fellowships-seven-coe)].
 
 {{< figure src="/ppl_photos/faaiq.jpeg" width="50%">}}
 
