@@ -14,8 +14,12 @@
                 {{ .authors }}<br>
                 <div>
                    <i>{{ .journal }}</i>. {{ .year }}. 
-                   <a href="{{ .url }}">link</a>
+                   <a href="{{ .url }}">link</a>.
                 </div>
+                {{ with .note }}
+                    <i>note:</i> {{ . }} 
+                {{ else }}
+                {{ end }} 
                 <div><br><br></div>
             </div>
         </div>

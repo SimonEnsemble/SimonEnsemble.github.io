@@ -9,9 +9,9 @@
 
 - title: Data-driven imputation of miscibility of aqueous solutions via graph-regularized logistic matrix factorization
   authors: D. Behnoudfar, C. Simon, J. Schrier
-  journal: ChemRxiv
+  journal: The Journal of Physical Chemistry B
   year: 2023
-  url: https://chemrxiv.org/engage/chemrxiv/article-details/64e2a7ad694bf1540cb21fd0
+  url: https://pubs.acs.org/doi/10.1021/acs.jpcb.3c03789
   image: pubs/miscibility_mf.png
 
 - title: A tutorial on the Bayesian statistical approach to inverse problems
@@ -40,7 +40,7 @@
   journal: The Journal of Chemical Physics
   year: 2022
   url: https://aip.scitation.org/doi/10.1063/5.0090573
-  other: <a href="https://aip.scitation.org/doi/10.1063/10.0012498">APS Scilight</a>. <a href="https://aip.scitation.org/action/showLargeCover?doi=10.1063%2Fjcp.2022.157.issue-3">on the cover of JCP</a>. <a href="https://today.oregonstate.edu/news/oregon-state-researchers-develop-computer-model-predict-whether-pesticide-will-harm-bees">OSU News</a>. <a href="https://www.capitalpress.com/ag_sectors/orchards_nuts_vines/osu-researchers-develop-computer-model-to-predict-which-pesticides-will-harm-bees/article_7028a5e4-039f-11ed-b645-1fab4583e76f.html">Capital Press</a>. <a href="https://chemrxiv.org/engage/chemrxiv/article-details/628999d687d01ff873edc7d2">preprint</a>.
+  note: on the cover; JCP Editors' Choice 2022; covered by Scilight "The buzz about machine learning and pesticide toxicity".
   image: pubs/bees.png
 
 - title: Computation-informed optimization of Ni(PyC)₂ functionalization for noble gas separations
@@ -55,7 +55,7 @@
   journal: Journal of Chemical Information and Modeling
   year: 2021
   url: https://pubs.acs.org/doi/10.1021/acs.jcim.1c01219
-  other: <a href="https://doi.org/10.33774/chemrxiv-2021-vx5r3">preprint</a>. <a href="https://pubs.acs.org/editorschoice/">ACS Editors’ Choice</a>.
+  note: ACS Editors’ Choice
   image: pubs/pmm.png
 
 - title: Bayesian optimization of nanoporous materials
@@ -63,7 +63,6 @@
   journal: "Molecular Systems Design & Engineering"
   year: 2021
   url: https://doi.org/10.1039/D1ME00093D
-  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/60e8e7e4551cb02a05ae0c32">preprint</a>.
   image: pubs/bo.png
 
 - title: "Non-injective gas sensor arrays: identifying undetectable composition changes"
@@ -72,7 +71,6 @@
   year: 2021
   url: https://doi.org/10.1088/1361-648X/ac1e49
   image: pubs/unresponsive_qcm_mof.png
-  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/6116b1054cb479355b2e6f34">preprint</a>.
 
 - title: Recommendation System to Predict Missing Adsorption Properties of Nanoporous Materials
   authors: A. Sturluson, A. Raza, G. McConachie, D. Siderius, X. Fern, C. Simon
@@ -80,7 +78,6 @@
   year: 2021
   url: https://doi.org/10.1021/acs.chemmater.1c01201
   image: pubs/rec_sys.png
-  other: <a href="https://chemrxiv.org/engage/chemrxiv/article-details/60c757ab337d6cfa42e2906d">preprint</a>.
 
 - title: "Adsorbed xenon propellant storage: are nanoporous materials worth the weight?"
   authors: M. T. Huynh, N. Gantzler, S. Hough, D. Roundy, P. K. Thallapally, C. M. Simon
@@ -95,7 +92,6 @@
   year: 2020
   url: https://pubs.acs.org/doi/10.1021/acssensors.0c02014
   image: pubs/sensor_graphic2.png
-  other: <a href="https://chemrxiv.org/articles/preprint/Evaluating_the_Fitness_of_Combinations_of_Adsorbents_for_Quantitative_Gas_Sensor_Arrays/12971171">preprint</a>, <a href="https://twitter.com/CoryMSimon/status/1336022834477289472">poster</a>.
 
 - title: Statistical mechanical model of gas adsorption in a metal-organic framework harboring a rotaxane molecular shuttle
   authors: J. Carney, D. Roundy, C. Simon
@@ -103,7 +99,6 @@
   year: 2020
   url: https://doi.org/10.1021/acs.langmuir.0c02839
   image: pubs/rms-mof-toc.png
-  other: <a href="https://chemrxiv.org/articles/Statistical_Thermodynamic_Model_of_Gas_Adsorption_in_a_Metal-Organic_Framework_Harboring_a_Rotaxane_Molecular_Shuttle/9942095">preprint</a>, <a href="https://twitter.com/CoryMSimon/status/1336026252495319041">poster</a>.
 
 
 - title: Message passing neural networks for partial charge assignment to metal-organic frameworks
@@ -111,7 +106,6 @@
   journal: Journal of Physical Chemistry C
   year: 2020
   url: https://doi.org/10.1021/acs.jpcc.0c04903
-  other: <a href="https://chemrxiv.org/articles/Message_Passing_Neural_Networks_for_Partial_Charge_Assignment_to_Metal-Organic_Frameworks/12298487">preprint</a>. <a href="https://youtu.be/im7vktesCsw">talk</a>.
   image: pubs/mpnn.png
   
 - title: The SIR dynamic model of infectious disease transmission and its analogy with chemical kinetics
@@ -119,7 +113,6 @@
   journal: PeerJ Physical Chemistry
   year: 2020
   url: https://peerj.com/articles/pchem-14/
-  other: <a href="https://chemrxiv.org/articles/The_SIR_Dynamic_Model_of_Infectious_Disease_Transmission_from_the_Viewpoint_of_a_Chemical_Engineer/12021342">preprint</a>. <a href="https://youtu.be/-qdYxB51H-M">talk</a>.
   image: pubs/sir.png
 
 - title: Curating metal-organic frameworks to compose robust gas sensor arrays in dilute conditions
@@ -127,7 +120,6 @@
   journal: "ACS Applied Materials & Interfaces"
   year: 2020
   url: https://doi.org/10.1021/acsami.9b16561
-  other: <a href="https://chemrxiv.org/articles/Curating_Metal-Organic_Frameworks_to_Compose_Robust_Gas_Sensor_Arrays_in_Dilute_Conditions/8179244">preprint</a>. <a href="https://today.oregonstate.edu/news/research-zeroing-electronic-nose-monitoring-air-quality-diagnosing-disease">OSU News</a>.
   image: pubs/sensor_arrays.png
 
 
@@ -143,7 +135,6 @@
   journal: Molecular Simulation 
   year: 2019
   url: https://www.tandfonline.com/doi/full/10.1080/08927022.2019.1648809
-  other: <a href="https://chemrxiv.org/articles/The_Role_of_Molecular_Modeling_Simulation_in_the_Discovery_and_Deployment_of_Metal-Organic_Frameworks_for_Gas_Storage_and_Separation/7854980">preprint</a>. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6774364/">open access PMC version</a>.
   image: pubs/MOF_schematic_not_pillared.png
 
 - title: "Eigencages: Learning a latent space of porous cage molecules"
@@ -152,7 +143,6 @@
   year: 2018
   url: http://dx.doi.org/10.1021/acscentsci.8b00638
   image: pubs/green_cage_light.png
-  other: <a href="https://today.oregonstate.edu/news/machine-learning-research-osu-unlocking-molecular-cages%E2%80%99-energy-saving-potential">OSU News</a>.
 
 - title: Multi- and instabilities in gas partitioning between nanoporous materials and rubber balloons
   authors: C. Simon, C. Carraro
@@ -160,7 +150,6 @@
   year: 2018
   url: https://doi.org/10.1098/rspa.2018.0703
   image: pubs/balloonsetup.png
-  other: <a href="https://chemrxiv.org/articles/Multi-_and_In-Stabilities_in_Gas_Partitioning_Between_Nanoporous_Materials_and_Rubber_Balloons/7135928">preprint</a>.
 
 - title: High-Throughput Computational Screening of Multivariate Metal-Organic Frameworks (MTV-MOFs) for CO<sub>2</sub> Capture
   authors: S. Li, Y. Chung, C. Simon, R. Snurr
