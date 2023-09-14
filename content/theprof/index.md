@@ -5,7 +5,7 @@
 
 {{< person-photo photo="/ppl_photos/cory.png" >}}
 
-assistant professor. \
+associate professor. \
 Ph.D. Chemical Engineering. UC Berkeley.
 
 hails from a small town in Ohio. 
