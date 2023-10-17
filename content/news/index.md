@@ -1,3 +1,16 @@
+## Nick → Dr. Gantzler and postdoc at Sandia National Labs
+
+huge congratulations to Dr. Nick Gantzler for earning his PhD in Physics! Nick is the second PhD student to graduate from the Simon Ensemble. 
+
+the title of Nick's thesis is "in silico screening of nanoporous materials for gas sensing and separation". check out his papers on [Google Scholar](https://scholar.google.com/citations?hl=en&user=86bzumwAAAAJ&view_op=list_works&sortby=pubdate).
+
+after graduation, Nick will work at [Sandia National Labs](https://www.sandia.gov/) as a postdoc with [N. Scott Bobbitt](https://scholar.google.com/citations?user=--aL94AAAAAJ&hl=en) in the Computational Materials & Data Science Division! 
+
+{{<figure
+    src="/ppl_photos/nick.jpg"
+    width="50%"
+>}}
+
 ## Paul will intern at Los Alamos National Lab!
 
 as a PhD intern for Los Alamos National Lab, Paul Morris will use the Quick Urban & Industrial Complex (QUIC) Dispersion Modeling System to simulate the dispersion of chemical plumes in realistic, urban environments and use machine learning to create better wind and plume libraries.
@@ -91,7 +104,7 @@ Mira started off working on convolutional neural networks to predict the transcr
 
 {{< figure src="/ppl_photos/MiraKhare.jpg" width="50%">}}
 
-## Árni $\mapsto$ Dr. Sturluson
+## Árni → Dr. Sturluson
 
 huge congratulations to Dr. Árni Sturluson for earning a PhD in Chemical Engineering from Oregon State University, the first PhD student graduated from The Simon Ensemble! check out Arni's publications [here](https://scholar.google.com/citations?user=k55bK2oAAAAJ&hl=en). we are proud of you, Árni, and we look forward to seeing your future accomplishments!
 
