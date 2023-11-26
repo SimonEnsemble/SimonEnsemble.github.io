@@ -1,14 +1,6 @@
 # phd students
 
 {{< student 
-name="Nick Gantzler"
-degree="B.S. Physics, B.S. Applied Mathematics, The University of Akron."
-about="In my free time, I enjoy playing guitar and going to bar trivia. I also really like Japanese media and culture. Some of my favorite animation artists include Hayao Miazaki, Makoto Shinkai, and Satoshi Kon."
-research="using molecular models and simulations to discover materials for gas separations"
-photo="/ppl_photos/nick.jpg"
->}}
-
-{{< student 
  name="Adrian Henle"
   degree="B.S. Chemistry, Seattle University. B.S. Computer Science, Oregon State University. M.S. Chemistry, University of Oregon."
   about="I enjoy skiing, hiking, gardening, and cats, but my raison d'être is raising my daughter, Sophie, with my wife, Samantha. A secondary obsession of mine is finding questionably utile applications of microcontrollers in everyday life."
@@ -32,15 +24,6 @@ photo="/ppl_photos/nick.jpg"
   photo="/ppl_photos/paul_morris.png"
 >}}
 
-# ms students
-{{< student 
-    name="Diba Behnoudfar" 
-    degree="B.S. Chemical Engineering, M.S. Polymer Engineering, Sharif University of Technology." 
-    about="I enjoy playing tennis with friends, discovering scenic places in nature, and teaching myself to play piano." 
-    research="applying data science to engineering problems, using matrix factorization with graph regularization to predict mixture properties." 
-    photo="/ppl_photos/diba.jpg"
->}}
-
 # visiting phd students
 
 {{< student 
@@ -62,7 +45,7 @@ photo="/ppl_photos/nick.jpg"
 >}}
 
 {{< student 
-    name="Daniel Casey-Hain."
+    name="Daniel Casey-Hain"
     degree="Chemical Engineering"
     about="My favorite activity is biking while listening to music. My favorite book is The Sirens of Titan."
     research="Using kernel functions as a similarity metric between pairs of molecules for machine learning tasks."
@@ -86,6 +69,10 @@ photo="/ppl_photos/nick.jpg"
     * _now_: deCODE Genetics
     * [Google Scholar](https://scholar.google.com/citations?user=k55bK2oAAAAJ&hl=en)
 
+* Nick Gantzler. PhD, Physics.
+    * _thesis_: "In Silico Screening of Nanoporous Materials for Gas Sensing and Separation"
+    * _now_: postdoc at Sandia National Labs
+    * [Google Scholar](https://scholar.google.com/citations?user=86bzumwAAAAJ&hl=en)
 
 ## ms 
 * Ping Yang. MS, Chemical Engineering. 
@@ -94,6 +81,8 @@ photo="/ppl_photos/nick.jpg"
 * Kai Geringer. MS, Chemical Engineering. (primary advisor = Matt Campbell)
     * _thesis_: "A Graph Grammar Representation of Metal-Organic Frameworks for Computational Synthesis and Exploration"
     * _now_: Jacobs Engineering
+* Diba Behnoudfar. MS, AI.
+    * _now_: PhD student, Mechanical Engineering, Oregon State University.
 
 ## ugrads
 * Mira Khare. Chemical Engineering. 
