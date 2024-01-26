@@ -24,6 +24,14 @@
   photo="/ppl_photos/paul_morris.png"
 >}}
 
+{{< student 
+ name="Qia Ke"
+  degree="B.S. Chemical Engineering, M.S. Chemical Engineering, South China University of Technology."
+  about="I enjoy traveling, savoring different cuisines, and watching TV shows."
+  research="using machine learning, decision-making algorithms, and molecular simulations to efficiently search for porous materials with optimal adsorption properties."
+  photo="/ppl_photos/qia_ke.jpeg"
+>}}
+
 # visiting phd students
 
 {{< student 
