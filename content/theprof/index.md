@@ -3,7 +3,7 @@
 
 :wave: 
 
-{{< person-photo photo="/ppl_photos/cory.png" >}}
+{{< person-photo photo="/ppl_photos/cory.jpeg" >}}
 
 associate professor. \
 Ph.D. Chemical Engineering. UC Berkeley.
