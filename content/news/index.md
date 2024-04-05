@@ -1,6 +1,6 @@
 ## Grant awarded NSF graduate fellowship
 
-huge congratulations to Grant Mcconachie, a former undergraduate researcher in our group (see his co-authored paper [here](https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.1c01201)), who was awarded an NSF (GRFP) fellowship!
+huge congratulations to Grant McConachie, a former undergraduate researcher in our group (see his co-authored paper [here](https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.1c01201)), who was awarded an NSF (GRFP) fellowship!
 Grant is currently a PhD student at Boston University in the Department of Biomedical Engineering.
 his research attempts to understand how animals encode olfactory stimuli.
 specifically, Grant is using graph neural networks to model odor interactions with sensory neurons and biophysically constrained neural networks to model propagation of odor information to higher brain regions. 
