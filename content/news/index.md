@@ -1,3 +1,12 @@
+## Danny enrolls in PhD program in ChemE at UIUC!
+
+huge congratulations to Danny Casey-Hain, who in Fall 2024 will enroll in the Chemical and Biomolecular Engineering PhD program at the University of Illinois Urbana-Champaign (UIUC)! in our research group, Danny worked on molecular graph kernels to score the similarity between molecules for machine learning models.
+
+{{<figure
+    src="/ppl_photos/danny_uiuc.jpg"
+    width="50%"
+>}}
+
 ## Grant awarded NSF graduate fellowship
 
 huge congratulations to Grant McConachie, a former undergraduate researcher in our group (see his co-authored paper [here](https://pubs.acs.org/doi/abs/10.1021/acs.chemmater.1c01201)), who was awarded an NSF (GRFP) fellowship!
