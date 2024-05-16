@@ -1,3 +1,12 @@
+## Gbenga, data science intern at Amazon in Seattle
+
+mega-congratulations to Gbenga Fabusola, a PhD student in our group, who will spend the summer as a data science intern at Amazon in Seattle!
+
+{{<figure
+    src="/ppl_photos/gbenga_amazon.jpeg"
+    width="50%"
+>}}
+
 ## Danny enrolls in PhD program in ChemE at UIUC!
 
 huge congratulations to Danny Casey-Hain, who in Fall 2024 will enroll in the Chemical and Biomolecular Engineering PhD program at the University of Illinois Urbana-Champaign (UIUC)! in our research group, Danny worked on molecular graph kernels to score the similarity between molecules for machine learning models.
