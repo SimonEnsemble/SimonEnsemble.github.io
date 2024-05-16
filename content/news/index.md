@@ -1,4 +1,4 @@
-## Gbenga, data science intern at Amazon in Seattle
+## Gbenga, data science intern at Amazon in Seattle!
 
 mega-congratulations to Gbenga Fabusola, a PhD student in our group, who will spend the summer as a data science intern at Amazon in Seattle!
 
