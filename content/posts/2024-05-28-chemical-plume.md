@@ -158,6 +158,14 @@ and we have:
 
 $$\boxed{u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}$$
 
+## case $n=2$
+
+TODO
+
+## visualization
+
+TODO
+
 # appendix
 
 ## the Fourier transform
@@ -197,4 +205,6 @@ $$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}
 
 
 # references
-
+* [notes on the Fourier transform by Brad Osgood](https://see.stanford.edu/materials/lsoftaee261/chap8.pdf)
+* Vergassola, M., Villermaux, E., & Shraiman, B. I. (2007). ‘Infotaxis’ as a strategy for searching without gradients. Nature, 445 (7126), 406-409.
+* Yukawa Potential hw assignment from Dept. of Physics at Montana State University. [here](https://www.physics.montana.edu/avorontsov/teaching/phsx545/documents/problems07s.pdf)
