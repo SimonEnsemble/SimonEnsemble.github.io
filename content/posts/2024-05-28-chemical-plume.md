@@ -121,76 +121,80 @@ $$
 breaking the integral into a sum of two integrals 
 $$
 I(\mathbf{x})=
+\frac{1}{i \lVert \mathbf{x} \rVert}\left(
 \int_0^{\infty}
-\frac{1}{i \lVert \mathbf{x} \rVert}
 e^{2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho-
 \int_0^{\infty}
-\frac{1}{i \lVert \mathbf{x} \rVert}
 e^{-2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho
+\right)
 $$
 
 and doing a $\hat{\rho}:=-\rho$ substitution in the second integral allows us to write this as a single integral:
 $$
 I(\mathbf{x})=
-\int_{-\infty}^{\infty}
 \frac{1}{i \lVert \mathbf{x} \rVert}
+\int_{-\infty}^{\infty}
 e^{2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho.
 $$
 
-we tackle this integral using contour integration in the complex plane, with $\gamma \subset \mathcal{C}$ a half-circle that lies on the real line from $-R$ to $R$ followed by the upper half semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the semi-circle encloses the pole of the integrand.
+we tackle this integral by involving it in a contour integration in the complex plane $\mathcal{C}$, with the contour $\gamma(R) \subset \mathcal{C}$ a half-circle that lies on the real line from $-R$ to $R$ followed by the upper semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the contour $\gamma$ encloses the pole (one of two) $z=\kappa/(2\pi)i$ of the integrand 
+
+$$g(z):=e^{2\pi i z \lVert \mathbf{x}\rVert }
+\dfrac{z
+}{4\pi^2 z^2 + \kappa^2}\, z \in \mathbb{C}.$$
 
 {{<figure
     src="/blog/plume/contour.jpeg"
-    caption="the model of the chemical plume."
+    caption="the contour $\gamma$ together with the two poles of $g(z)$."
 >}}
 
+then, we can write:
 $$
 \frac{1}{i \lVert \mathbf{x} \rVert}
-\oint_{\gamma}
-e^{2\pi i \lVert \mathbf{x}\rVert z}
-\dfrac{z
-}{4\pi^2z^2  + \kappa^2}
-dz
-=:
+\oint_{\gamma(R)}g(z)dz = 
 \frac{1}{i \lVert \mathbf{x} \rVert}
-\oint\_{\gamma}g(z)dz
+\int_{-R}^R g(z) dz +
+\frac{1}{i \lVert \mathbf{x} \rVert} \int_{\\{Re^{i\theta} :\, \theta \in [0, \pi]\\}} g(z)dz
 $$
 
-now, 
+now, as $R\rightarrow\infty$, the second integral becomes $I(\mathbf{x})$ we're looking for. and,
+via Jordan's lemma, $\int_{\\{Re^{i\theta} :\, \theta \in [0, \pi]\\}}g(z) dz \rightarrow 0$ as $R\rightarrow \infty$.
+so:
 $$
-\oint_{\gamma}f(z)dz = \int_{-R}^R f(z) dz + \int_{\\{Re^{i\theta} :\, \theta \in [0, \pi]\\}} f(z)dz
+\frac{1}{i \lVert \mathbf{x} \rVert}
+\lim_{R\rightarrow\infty} \oint_{\gamma(R)}g(z)dz = 
+I(\mathbf{x})
 $$
-
-via Jordan's lemma, $\int_{\\{Re^{i\theta} :\, \theta \in [0, \pi]\\}}f(z) dz \rightarrow 0$.
 
 via Cauchy's residue theorem:
-$$\oint_{\gamma}f(z)dz=2\pi i \text{Res}(f, \kappa/(2\pi)i)$$
-since the contour $\gamma$ encircles the pole $\kappa/(2\pi)i$ of the complex function $f(z)$.
+$$\oint_{\gamma}g(z)dz=2\pi i \text{Res}(g, \kappa/(2\pi)i)$$
+since the contour $\gamma$ encircles the pole $\kappa/(2\pi)i$ of the complex function $g(z)$ in a counter-clockwise fashion.
 
-the residue is:
-$$\text{Res}(f, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\pi)i)f(z)=\frac{1}{8\pi^2}e^{-\kappa \lVert \mathbf{x} \rVert}$$
+calculating the residue:
+$$\text{Res}(g, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\pi)i)g(z)=\frac{1}{8\pi^2}e^{-\kappa \lVert \mathbf{x} \rVert}$$
 
 finally, then:
 $$
+I(\mathbf{x})=
 \int\_{\mathbb{R}^n} 
 \dfrac{
 e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 }{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}d\boldsymbol\omega = 
-\frac{1}{4\pi \lVert \mathbf{x} \rVert}e^{-\kappa \mathbf{x}}.
+\frac{1}{4\pi \lVert \mathbf{x} \rVert}e^{-\kappa\lVert \mathbf{x}\rVert}.
 $$
 
 and we have:
 
-$$\boxed{u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}$$
+$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}$$
 
 ### case $n=2$
 
