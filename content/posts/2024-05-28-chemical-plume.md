@@ -194,6 +194,10 @@ $$
 
 and we have:
 
+$$\boxed{u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{-\mathbf{v} \mathbf{x}\_0/(2D)}}$$
+
+going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume in 3D!
+
 $$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}$$
 
 ### case $n=2$
