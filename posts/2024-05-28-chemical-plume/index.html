@@ -58,51 +58,55 @@ d\rho
 $$</p><p>breaking the integral into a sum of two integrals
 $$
 I(\mathbf{x})=
+\frac{1}{i \lVert \mathbf{x} \rVert}\left(
 \int_0^{\infty}
-\frac{1}{i \lVert \mathbf{x} \rVert}
 e^{2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho-
 \int_0^{\infty}
-\frac{1}{i \lVert \mathbf{x} \rVert}
 e^{-2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho
+\right)
 $$</p><p>and doing a $\hat{\rho}:=-\rho$ substitution in the second integral allows us to write this as a single integral:
 $$
 I(\mathbf{x})=
-\int_{-\infty}^{\infty}
 \frac{1}{i \lVert \mathbf{x} \rVert}
+\int_{-\infty}^{\infty}
 e^{2\pi i \rho \lVert \mathbf{x}\rVert }
 \dfrac{\rho
 }{4\pi^2 \rho^2 + \kappa^2}
 d\rho.
-$$</p><p>we tackle this integral using contour integration in the complex plane, with $\gamma \subset \mathcal{C}$ a half-circle that lies on the real line from $-R$ to $R$ followed by the upper half semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the semi-circle encloses the pole of the integrand.</p><figure><img src=/blog/plume/contour.jpeg alt="the model of the chemical plume."><figcaption><p>the model of the chemical plume.</p></figcaption></figure><p>$$
-\frac{1}{i \lVert \mathbf{x} \rVert}
-\oint_{\gamma}
-e^{2\pi i \lVert \mathbf{x}\rVert z}
+$$</p><p>we tackle this integral by involving it in a contour integration in the complex plane $\mathcal{C}$, with the contour $\gamma(R) \subset \mathcal{C}$ a half-circle that lies on the real line from $-R$ to $R$ followed by the upper semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the contour $\gamma$ encloses the pole (one of two) $z=\kappa/(2\pi)i$ of the integrand</p><p>$$g(z):=e^{2\pi i z \lVert \mathbf{x}\rVert }
 \dfrac{z
-}{4\pi^2z^2 + \kappa^2}
-dz
-=:
+}{4\pi^2 z^2 + \kappa^2}, z \in \mathbb{C}.$$</p><figure><img src=/blog/plume/contour.jpeg alt="the contour $\gamma$ together with the two poles of $g(z)$."><figcaption><p>the contour $\gamma$ together with the two poles of $g(z)$.</p></figcaption></figure><p>then, we can write:
+$$
 \frac{1}{i \lVert \mathbf{x} \rVert}
-\oint_{\gamma}g(z)dz
-$$</p><p>now,
+\oint_{\gamma(R)}g(z)dz =
+\frac{1}{i \lVert \mathbf{x} \rVert}
+\int_{-R}^R g(z) dz +
+\frac{1}{i \lVert \mathbf{x} \rVert} \int_{\{Re^{i\theta} :, \theta \in [0, \pi]\}} g(z)dz
+$$</p><p>now, as $R\rightarrow\infty$, the second integral becomes $I(\mathbf{x})$ we&rsquo;re looking for. and,
+via Jordan&rsquo;s lemma, $\int_{\{Re^{i\theta} :, \theta \in [0, \pi]\}}g(z) dz \rightarrow 0$ as $R\rightarrow \infty$.
+so:
 $$
-\oint_{\gamma}f(z)dz = \int_{-R}^R f(z) dz + \int_{\{Re^{i\theta} :, \theta \in [0, \pi]\}} f(z)dz
-$$</p><p>via Jordan&rsquo;s lemma, $\int_{\{Re^{i\theta} :, \theta \in [0, \pi]\}}f(z) dz \rightarrow 0$.</p><p>via Cauchy&rsquo;s residue theorem:
-$$\oint_{\gamma}f(z)dz=2\pi i \text{Res}(f, \kappa/(2\pi)i)$$
-since the contour $\gamma$ encircles the pole $\kappa/(2\pi)i$ of the complex function $f(z)$.</p><p>the residue is:
-$$\text{Res}(f, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\pi)i)f(z)=\frac{1}{8\pi^2}e^{-\kappa \lVert \mathbf{x} \rVert}$$</p><p>finally, then:
+\frac{1}{i \lVert \mathbf{x} \rVert}
+\lim_{R\rightarrow\infty} \oint_{\gamma(R)}g(z)dz =
+I(\mathbf{x})
+$$</p><p>via Cauchy&rsquo;s residue theorem:
+$$\oint_{\gamma}g(z)dz=2\pi i \text{Res}(g, \kappa/(2\pi)i)$$
+since the contour $\gamma$ encircles the pole $\kappa/(2\pi)i$ of the complex function $g(z)$ in a counter-clockwise fashion.</p><p>calculating the residue:
+$$\text{Res}(g, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\pi)i)g(z)=\frac{1}{8\pi^2}e^{-\kappa \lVert \mathbf{x} \rVert}$$</p><p>finally, then:
 $$
+I(\mathbf{x})=
 \int_{\mathbb{R}^n}
 \dfrac{
 e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 }{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}d\boldsymbol\omega =
-\frac{1}{4\pi \lVert \mathbf{x} \rVert}e^{-\kappa \mathbf{x}}.
-$$</p><p>and we have:</p><p>$$\boxed{u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}_0)/(2D)}}$$</p><h3 id=case-n2>case $n=2$</h3><p>TODO</p><h3 id=visualization>visualization</h3><p>TODO</p><h2 id=appendix>appendix</h2><h3 id=the-fourier-transform>the Fourier transform</h3><h4 id=definition>definition</h4><p>the Fourier transform of a function $f(\mathbf{x})$ is defined as:
+\frac{1}{4\pi \lVert \mathbf{x} \rVert}e^{-\kappa\lVert \mathbf{x}\rVert}.
+$$</p><p>and we have:</p><p>$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}_0)/(2D)}}$$</p><h3 id=case-n2>case $n=2$</h3><p>TODO</p><h3 id=visualization>visualization</h3><p>TODO</p><h2 id=appendix>appendix</h2><h3 id=the-fourier-transform>the Fourier transform</h3><h4 id=definition>definition</h4><p>the Fourier transform of a function $f(\mathbf{x})$ is defined as:
 $$\mathcal{F}[f(\mathbf{x})] ({\boldsymbol \omega}):=\int_{\mathbb{R}^n} f(\mathbf{x}) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} =: \tilde{f}({\boldsymbol \omega})$$
 where ${\boldsymbol \omega}\in\mathbb{R}^n$.</p><h4 id=inverse-fourier-transform>inverse Fourier transform</h4><p>for recovering the function $f(\mathbf{x})$ from its Fourier transform $\tilde{f}(\mathbf{\omega})$, the inverse Fourier transform is:
 $$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega}}d\mathbf{x}.$$</p><h4 id=fourier-transform-of-a-dirac-delta-function>Fourier transform of a Dirac delta function</h4><p>the Fourier transform of a Dirac delta function is:
