@@ -12,18 +12,18 @@ _author_: Cory Simon
 
 we wish to mathematically model the average, steady-state shape of a chemical plume whose source is a point and continuous.
 
-specifically, we wish to model the function $c(\mathbf{x})$ [g/m$^n$], the average concentration of a chemical in a spatially homogeneous environment $\mathbb{R}^n$ ($n\in\{2,3\}$), with $\mathbf{x}$ a point in the environment $\mathbb{R}^n$.
+specifically, we wish to model the function $c(\mathbf{x})$ [g/m$^n$], the average concentration of a chemical in the air of a spatially homogeneous environment $\mathbb{R}^n$ ($n\in\\{2,3\\}$), with $\mathbf{x}$ a point in the environment $\mathbb{R}^n$.
 
-we account for four pieces of physics.
-1. the chemical is continuously released into the environment from a source location $\mathbf{x}_0\in\mathbb{R}^n$ at a constant rate $R$ [g/min].
-2. wind transports the chemical downwind through advection, with $\mathbf{v}$ [m/min] the (constant) mean wind vector.
-3. the chemical diffuses, owing to both molecular diffusivity and [larger] turbulence diffusivity, with diffusion coefficient $D$ [m$^2$/min].
+we account for four pieces of physics:
+1. the chemical is continuously released into the environment at a constant rate $R$ [g/min] from a point source at location $\mathbf{x}_0\in\mathbb{R}^n$.
+2. wind transports the chemical downwind through advection, with $\mathbf{v}\in\mathbb{R}^n$ [m/min] the (constant) mean wind vector.
+3. the chemical diffuses, owing to both molecular diffusivity and [dominant] turbulent diffusivity, with diffusion coefficient $D$ [m$^2$/min].
 4. the chemical decays, owing to e.g. reaction with humidity or photodegradation (via ultraviolet radiation), with $\tau$ [min] the mean lifespan of the chemical.
 
 ## the steady-state diffusion-advection-decay equation
 a model for the average [over time] concentration of the chemical in the air, $c(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^n$, is then the steady-state diffusion-advection-decay [partial differential] equation with a point-source term:
-$$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c - \tau^{-1}c + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
-respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. 
+$$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c(\mathbf{x}) - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x}) - \tau^{-1}c(\mathbf{x}) + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
+respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function.)
 
 {{<figure
     src="/blog/plume/eqn.jpeg"
@@ -35,28 +35,24 @@ we transform the steady-state diffusion-advection-decay equation into a modified
 $$c(\mathbf{x})=:u(\mathbf{x})e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
 
 by the product rule:
-$${\boldsymbol \nabla}_{\mathbf{x}}c(\mathbf{x})= ({\boldsymbol \nabla}\_{\mathbf{x}}u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ u(\mathbf{x})\mathbf{v}(2D)^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
-
+$${\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x})= ({\boldsymbol \nabla}\_{\mathbf{x}}u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ u(\mathbf{x})\mathbf{v}(2D)^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
 and
 $${\boldsymbol \nabla}_{\mathbf{x}}^2c(\mathbf{x}) = {\boldsymbol \nabla}\_{\mathbf{x}} \cdot {\boldsymbol \nabla}\_{\mathbf{x}}c (\mathbf{x})=
 ({\boldsymbol \nabla}\_{\mathbf{x}}^2u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ ({\boldsymbol \nabla}\_{\mathbf{x}} u(\mathbf{x}))\mathbf{v} D^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)} + u(\mathbf{x})(2D)^{-2} \mathbf{v}\cdot \mathbf{v} e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.
 $$
 
 stuffing these into the original diffusion-advection-decay eqn gives the modified Helmholtz problem in $u(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^n$:
-
 $${\boldsymbol \nabla}_{\mathbf{x}}^2u - \kappa^2 u = -\frac{R}{D} \delta(\mathbf{x}-\mathbf{x}_0) e^{-\mathbf{v}\cdot\mathbf{x}/(2D)} = -\frac{R}{D} \delta(\mathbf{x}-\mathbf{x}_0) e^{-\mathbf{v}\cdot\mathbf{x_0}/(2D)}$$
-
 with
-
 $$\kappa^2:= \frac{\lVert \mathbf{v} \rVert^2+4 \tau^{-1}D}{4D^2}.$$
+the latter equality holds because the Dirac delta flattens the exponential term except for at $\mathbf{x}_0$.
 
-we now focus on finding the solution to this problem in $u(\mathbf{x})$ from which $c(\mathbf{x})$ follows.
+we now focus on finding the solution $u(\mathbf{x})$ to this modified Helmholtz problem, from which $c(\mathbf{x})$ follows.
 
 ## solution 
 ### the Fourier transform of the modified Helmholtz equation
 
 we take the Fourier transform of the modified Helmholtz problem, giving an algebraic equation in the Fourier transform of $u(\mathbf{x})$, $\tilde{u}(\boldsymbol \omega)$:
-
 $$-4 \pi^2\lVert \boldsymbol \omega \rVert^2 \tilde{u}(\mathbf{\omega}) - \kappa^2 \tilde{u}(\mathbf{\omega})= -\frac{R}{D}e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}e^{-\mathbf{v}\cdot\mathbf{x_0}/(2D)}$$
 
 and solve for the solution in the frequency domain:
@@ -218,32 +214,31 @@ $$\mathcal{F}[f(\mathbf{x})] ({\boldsymbol \omega}):=\int_{\mathbb{R}^n} f(\math
 where ${\boldsymbol \omega}\in\mathbb{R}^n$.
 
 #### inverse Fourier transform
-for recovering the function $f(\mathbf{x})$ from its Fourier transform $\tilde{f}(\mathbf{\omega})$, the inverse Fourier transform is:
+for recovering the function $f(\mathbf{x})$ from its Fourier transform $\tilde{f}(\boldsymbol \omega)$, the inverse Fourier transform is:
 $$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega}}d\mathbf{x}.$$
 
 #### Fourier transform of a Dirac delta function
 
-the Fourier transform of a Dirac delta function is:
+via the sifting property of the Dirac delta function
 $$\mathcal{F}[\delta(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \delta (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0}.$$
-via the sifting property of the delta function.
 
 #### Fourier transform of derivatives
 
 the Fourier transform of a derivative is:
 $$\mathcal{F}\left[\frac{\partial f}{\partial x_i}\right] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \frac{\partial f}{\partial x_i} e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x}.$$
-tackling the integral over $x_i \in (-\infty, \infty)$ by parts, with $u:=e^{-2\pi i \boldsymbol \omega}$ and $dv=\frac{\partial f}{\partial x_i} dx_i$ gives:
+tackling the integral over $x_i \in (-\infty, \infty)$ by parts, with $u:=e^{-2\pi i \boldsymbol \omega}$ and $dv=\frac{\partial f}{\partial x_i} dx_i$ gives, provided $f \rightarrow 0$ as $x_i \rightarrow \pm \infty$:
 $$\mathcal{F}\left[\frac{\partial f}{\partial x_i}\right] ({\boldsymbol \omega}) = 2 \pi i \omega_i \tilde{f}(\boldsymbol \omega).$$
 hence,
-$$\mathcal{F}\left[{\boldsymbol \nabla} f \right] ({\boldsymbol \omega}) = 2 \pi i {\boldsymbol \omega} \tilde{f}(\boldsymbol \omega)$$
+$$\mathcal{F}\left[{\boldsymbol \nabla}_{\mathbf{x}} f \right] ({\boldsymbol \omega}) = 2 \pi i {\boldsymbol \omega} \tilde{f}(\boldsymbol \omega)$$
 and
-$$\mathcal{F}\left[{\boldsymbol \nabla}^2 f \right] ({\boldsymbol \omega}) = -4 \pi^2 {\boldsymbol \omega} \cdot {\boldsymbol \omega} \tilde{f}(\boldsymbol \omega) = -4\pi^2 \lVert \boldsymbol \omega \rVert^2 \tilde{f}(\boldsymbol \omega).$$
+$$\mathcal{F}\left[{\boldsymbol \nabla}\_\mathbf{x}^2 f \right] ({\boldsymbol \omega}) = -4 \pi^2 {\boldsymbol \omega} \cdot {\boldsymbol \omega} \tilde{f}(\boldsymbol \omega) = -4\pi^2 \lVert \boldsymbol \omega \rVert^2 \tilde{f}(\boldsymbol \omega).$$
 
 #### Fourier transform of a translated function
 
 finally, we remark that a translation of the function $f(\mathbf{x})$ by vector $\mathbf{x}_0$ gives:
 $$\mathcal{F}[f(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} f (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0} \tilde{f}(\boldsymbol \omega).$$
 shown after a substitution $\mathbf{x}^\prime:=\mathbf{x}-\mathbf{x}_0$. hence,
-$$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x}) = f(\mathbf{x}-\mathbf{x}_0).$$
+$$\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x}) = f(\mathbf{x}-\mathbf{x}_0).$$
 
 ## references
 * notes on the Fourier transform by Brad Osgood [here](https://see.stanford.edu/materials/lsoftaee261/chap8.pdf)
