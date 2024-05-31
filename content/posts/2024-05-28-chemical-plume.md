@@ -4,7 +4,7 @@ date: 2024-05-28
 tags: 
     - math 
 ---
-_author_: Cory Simon
+_author_: Cory Simon, Paul Morris
 
 [WORK IN PROGRESS]
 
@@ -191,7 +191,22 @@ going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume 
 
 $$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}.$$
 
-### case $n=2$
+#### case $n=2$
+
+we write the integral $I_2(\mathbf{x})$ in polar coordinates $(r, \theta)$ with $r=\lVert \boldsymbol\omega\rVert$ the radius and $\theta$ the angle. 
+aligning the $x$-axis of this polar coordinate system with the vector $\mathbf{x}$, we can write:
+$$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \lVert \lVert \boldsymbol \omega \lVert \cos \theta$$
+and the integral becomes (recall, the area element in polar coordinates is $r drd\theta$):
+$$
+I_2(\mathbf{x})=
+\int_0^{2\pi}
+\int_0^{\infty}
+\dfrac{
+e^{2\pi i r \lVert \mathbf{x}\rVert \cos \theta }
+}{4\pi^2 r^2 + \kappa^2}
+r dr
+d\theta
+$$
 
 TODO
 
