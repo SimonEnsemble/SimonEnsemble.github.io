@@ -1,4 +1,5 @@
-baseURL = "https://simonensemble.github.io"
+baseURL = 'https://simonensemble.github.io'
+relativeURLs = true
 theme = "hugo-theme-cactus"
 languageCode = 'en-us'
 title = 'The Simon Research Ensemble'
@@ -47,3 +48,23 @@ weight = 5
 name = "blog"
 url = "/posts"
 weight = 6
+
+
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'pastie'
+    tabWidth = 4
+
+

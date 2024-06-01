@@ -11,7 +11,7 @@ _author_: Cory Simon, Paul Morris
 ## a mathematical model of a chemical plume
 
 we wish to develop and find the solution to a simple mathematical model of a chemical plume, caused by the continuous release of the chemical from a point source, at steady-state conditions.
-such a model is useful for (i) predicting the extent and intensity of a chemical plume and (ii) searching for the source of a chemical plume using a mobile robot equipped with chemical sensors.
+such a model is useful for (i) predicting the extent and intensity of a chemical plume and (ii) searching for the source of a chemical plume using a mobile robot equipped with chemical sensors. 
 
 we treat the environment $\mathbb{R}^n$ ($n\in\\{2, 3\\}$) as spatially homogeneous and aim to account for four pieces of physics:
 1. the chemical is continuously released into the environment at a constant rate $R$ [g/min] from a point source at location $\mathbf{x}_0\in\mathbb{R}^n$.
@@ -30,6 +30,8 @@ respectively, the terms model isotropic diffusivity, advection by wind, decay, a
     src="/blog/plume/eqn.jpeg"
     caption="the simple model of the chemical plume at steady state."
 >}}
+
+(this model is employed in the [Infotaxis](https://www.nature.com/articles/nature05464) policy to search for the source of a chemical plume. the equations we derive match those provided in the SI of the Infotaxis paper.)
 
 ### transformation to the modified Helmholtz equation
 we transform the steady-state diffusion-advection-decay equation into a modified Helmholtz problem via the transformation:
@@ -189,7 +191,7 @@ $$u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} 
 
 going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume in 3D!
 
-$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}.}$$
+$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)},  \mathbf{x}\in\mathbb{R}^3.}$$
 
 #### case $n=2$
 
@@ -208,7 +210,7 @@ r dr
 d\theta
 $$
 
-we recognize the integral over $\theta$ as a function of $\lVert \mathbf{x} \rVert$ as related to the zero-order Bessel function of the first kind, whose integral representation (Hansen-Bessel formula) is:
+we recognize the integral over $\theta$ as a function of $\lVert \mathbf{x} \rVert$ as related to the [zero-order Bessel function of the first kind](https://en.wikipedia.org/wiki/Bessel_function), whose [integral representation (Hansen-Bessel formula)](https://dlmf.nist.gov/10.9) is:
 $$J_0(a):=\frac{1}{\pi} \int_0^\pi e^{i a \cos(\theta)}d\theta.$$
 by the power series representation of $J_0(a)$, it is an even function i.e. $J_0(a)=J_0(-a)$. so:
 $$\int_0^{2\pi} e^{i a \cos(\theta)}d\theta= \int_0^{\pi} e^{i a \cos(\theta)}d\theta+\int_\pi^{2\pi} e^{i a \cos(\theta)}d\theta=\pi J_0(a) + \int_0^{\pi} e^{-i a \cos(\theta)}d\theta = 2\pi J_0(a)$$
@@ -231,16 +233,16 @@ J_0(2\pi r \lVert \mathbf{x}\rVert)
 r dr
 $$
 
-next, we recognize this as resembling the Hankel-Nicholson integral:
-$$\int_0^\infty \frac{r}{r^2+z^2}J_0(a\theta) d\theta=K_0(az)$$
-where $K_0(\cdot)$ is the zero-order modified Bessel function of the second kind (perhaps, proof follows from the series representations of $J_0(\cdot)$ and $K_0(\cdot)$). this gives:
+next, we recognize this as resembling the Hankel-Nicholson integral (eqn 11.4.44 in Abramowitz and Stegun):
+$$\int_0^\infty \frac{r}{r^2+\xi ^2}J_0(ar) dr=K_0(a\xi)$$
+where $K_0(\cdot)$ is the [zero-order modified Bessel function of the second kind](https://en.wikipedia.org/wiki/Bessel_function#Modified_Bessel_functions) (we suspect, the proof of this follows from the series representations of $J_0(\cdot)$ and $K_0(\cdot)$). this gives:
 $$
 I_2(\mathbf{x})=
 \frac{1}{2\pi}
 K_0(\kappa \lVert \mathbf{x} \rVert^2).
 $$
 
-(many numerical libraries, e.g. Python and Julia, provide implementations of $K_0(\cdot)$.)
+(many numerical libraries, e.g. Python and Julia, provide implementations of $K_0(\cdot)$. e.g. [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.k0.html).)
 
 finally, using $I_2(\mathbf{x})$ to construct $u(\mathbf{x})$, then using $u(\mathbf{x})$ to construct $c(\mathbf{x})$, we have the shape of the chemical plume in 2D!
 $$\boxed{
@@ -251,6 +253,71 @@ c(\mathbf{x})=
 ### visualization
 
 we use Julia to visualize the shape of the chemical plume in 2D.
+
+first, we define a data structure to store the parameters characterizing the chemical plume.
+```julia
+struct PlumeParams
+    x₀::Vector{Float64} # source location [m]
+    R::Float64          # source strength [g/min]
+    v::Vector{Float64}  # wind vector [m/s]
+    D::Float64          # diffusion coefficent [m²/min]
+    τ::Float64          # lifespan [min]
+    κ::Float64          # m⁻²
+end
+
+# constructor that computes κ for us
+function PlumeParams(; x₀=x₀, R=R, D=D, τ=τ, v=v)
+    κ = sqrt((dot(v, v) + 4 * D / τ) / (4 * D ^ 2)) # m⁻²
+    return PlumeParams(x₀, R, v, D, τ, κ)
+end
+```
+
+second, we use the `SpecialFunctions.jl` implementation of the zero-order modified Bessel function of the second kind to define the function $c(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R^2}$.
+```julia
+function c(x::Vector{Float64}, p::PlumeParams) # g/m²
+	return p.R / (2 * π * p.D) * besselk(0, p.κ * norm(x - p.x₀)) * 
+	        exp(dot(p.v, x - p.x₀) / (2 * p.D))
+end
+```
+
+third, we compute $c(\mathbf{x})$ over a grid of points in $\mathbb{R}^2$.
+```julia
+L = 50.0 # m
+res = 500
+xs = range(0.0, L, length=res) # m
+p = PlumeParams(x₀=[25.0, 4.0], R=10.0, D=25.0, τ=50.0, v=[-5.0, 15.0])
+
+cs = [c([x₁, x₂], p) for x₁ in xs, x₂ in xs] # g/m²
+```
+
+finally, we visualize the plume with `CairoMakie.jl`:
+
+```julia
+cmap = ColorScheme(
+    vcat(
+        ColorSchemes.grays[end],
+        reverse([ColorSchemes.viridis[i] for i in 0.0:0.05:1.0])
+    )
+)
+    
+fig = Figure()
+ax  = Axis(
+    fig[1, 1], 
+    aspect=DataAspect(), 
+    xlabel="x₁", 
+    ylabel="x₂"
+)
+hm  = heatmap!(xs, xs, cs, colormap=cmap, colorrange=(0.0, maximum(cs)))
+Colorbar(fig[1, 2], hm, label = "concentration c(x₁, x₂) [g/m²]")
+fig
+```
+
+voila!
+
+{{<figure
+    src="/blog/plume/plume.png"
+    caption="visualization of $c(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^2$."
+>}}
 
 ## appendix
 
