@@ -6,8 +6,6 @@ tags:
 ---
 _author_: Cory Simon, Paul Morris
 
-[WORK IN PROGRESS]
-
 ## a mathematical model of a chemical plume
 
 we wish to develop and find the solution to a simple mathematical model of a chemical plume, caused by the continuous release of the chemical from a point source, at steady-state conditions.
