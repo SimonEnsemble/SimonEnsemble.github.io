@@ -8,26 +8,27 @@ _author_: Cory Simon, Paul Morris
 
 [WORK IN PROGRESS]
 
-## modeling a chemical plume
+## a mathematical model of a chemical plume
 
-we wish to mathematically model the average, steady-state shape of a chemical plume whose source is a point and continuous.
+we wish to develop and find the solution to a simple mathematical model of a chemical plume, caused by the continuous release of the chemical from a point source, at steady-state conditions.
+such a model is useful for (i) predicting the extent and intensity of a chemical plume and (ii) searching for the source of a chemical plume using a mobile robot equipped with chemical sensors.
 
-specifically, we wish to model the function $c(\mathbf{x})$ [g/m$^n$], the average concentration of a chemical in the air of a spatially homogeneous environment $\mathbb{R}^n$ ($n\in\\{2,3\\}$), with $\mathbf{x}$ a point in the environment $\mathbb{R}^n$.
-
-we account for four pieces of physics:
+we treat the environment $\mathbb{R}^n$ ($n\in\\{2, 3\\}$) as spatially homogeneous and aim to account for four pieces of physics:
 1. the chemical is continuously released into the environment at a constant rate $R$ [g/min] from a point source at location $\mathbf{x}_0\in\mathbb{R}^n$.
 2. wind transports the chemical downwind through advection, with $\mathbf{v}\in\mathbb{R}^n$ [m/min] the (constant) mean wind vector.
 3. the chemical diffuses, owing to both molecular diffusivity and [dominant] turbulent diffusivity, with diffusion coefficient $D$ [m$^2$/min].
-4. the chemical decays, owing to e.g. reaction with humidity or photodegradation (via ultraviolet radiation), with $\tau$ [min] the mean lifespan of the chemical.
+4. the chemical decays, owing to e.g. chemical reaction with humidity or photodegradation (via ultraviolet radiation), with $\tau$ [min] the mean lifespan of the chemical.
 
-## the steady-state diffusion-advection-decay equation
-a model for the average [over time] concentration of the chemical in the air, $c(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^n$, is then the steady-state diffusion-advection-decay [partial differential] equation with a point-source term:
+from these simple assumptions, we wish to model the function $c(\mathbf{x})$ [g/m$^n$], the average concentration of the chemical at a point $\mathbf{x}\in\mathbb{R}^n$ in the environment. 
+
+### the steady-state diffusion-advection-decay equation
+invoking conservation of mass and accounting for the four pieces of physics listed above, we arrive at the steady-state [diffusion-advection-decay [partial differential] equation](https://en.wikipedia.org/wiki/Convection%E2%80%93diffusion_equation) with a point-source term:
 $$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c(\mathbf{x}) - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x}) - \tau^{-1}c(\mathbf{x}) + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
-respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function.)
+respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function and $\boldsymbol \nabla\_\mathbf{x}:=[\frac{\partial }{\partial x\_1}, \frac{\partial }{\partial x\_2}]$ for $n=2$.)
 
 {{<figure
     src="/blog/plume/eqn.jpeg"
-    caption="the model of the chemical plume at steady state."
+    caption="the simple model of the chemical plume at steady state."
 >}}
 
 ### transformation to the modified Helmholtz equation
@@ -62,7 +63,7 @@ $$\tilde{u}(\boldsymbol \omega) = \dfrac{\frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x
 to obtain $u(\mathbf{x})$, we take the inverse Fourier transform of $\tilde{u}(\boldsymbol \omega)$:
 $$u(\mathbf{x}) = \int_{\mathbb{R}^n} \dfrac{\frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x}_0 / (2D)}}{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}} d\boldsymbol\omega.$$
 
-the $e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}$ term corresponds to a translation, so let's focus on, for now:
+the $e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}$ term corresponds to a translation, so let's focus on:
 
 $$u(\mathbf{x}+\mathbf{x}_0) = \frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x}_0 / (2D)} 
 \int\_{\mathbb{R}^n} 
@@ -71,20 +72,18 @@ e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 }{4\pi^2 \lVert \boldsymbol \omega \rVert^2 + \kappa^2}d\boldsymbol\omega.$$
 
 now, the approach to evaluate the integral 
-
 $$I_n(\mathbf{x}):=
 \int\_{\mathbb{R}^n} 
 \dfrac{
 e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 }{4\pi^2 \lVert \boldsymbol \omega \rVert^2 + \kappa^2}d\boldsymbol\omega$$
-
-is qualitatively different depending on the dimension of the space, $n$. 
+is qualitatively different depending on the dimension of the space, $n$. so, we treat $n=2$ and $n=3$ separately below.
 
 #### case $n=3$
 
 we write the integral $I_3(\mathbf{x})$ in spherical coordinates $(\rho, \phi, \theta)$ with $\rho=\lVert \boldsymbol\omega\rVert$ the radius, $\phi$ the polar angle, and $\theta$ the azimuthal angle. aligning the $z$-axis of this spherical coordinate system with the vector $\mathbf{x}$, we can write:
 $$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \lVert \lVert \boldsymbol \omega \lVert \cos \phi$$
-and the integral becomes (recall, the volume element in spherical coordinates is $\rho^2\sin \phi d\rho d\phi d\theta$):
+and the integral becomes (the volume element in spherical coordinates is $\rho^2\sin \phi d\rho d\phi d\theta$):
 
 $$
 I_3(\mathbf{x})=
@@ -139,7 +138,7 @@ e^{2\pi i \rho \lVert \mathbf{x}\rVert }
 d\rho.
 $$
 
-we tackle this integral by involving it in a contour integration in the complex plane $\mathbb{C}$. consider the directed, closed curve $\gamma$ in $\mathbb{C}$ consisting of (1) a line segment on the real axis from $-R$ to $R$ followed by (2) the upper semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the contour $\gamma$ encloses the pole (one of two) $z=\kappa/(2\pi)i$ of the integrand 
+we tackle this integral by involving it in a contour integration in the complex plane $\mathbb{C}$. consider the simple, directed, closed curve $\gamma$ in $\mathbb{C}$ consisting of (1) a line segment on the real axis from $-R$ to $R$ followed by (2) the upper semicircle of radius $R$, centered at $0$. we choose $R> \kappa/(2\pi)$ so the contour $\gamma$ encloses the pole (one of two) $z=\kappa/(2\pi)i$ of the integrand (now viewed as a complex function)
 $$g(z):=e^{2\pi i z \lVert \mathbf{x}\rVert }
 \dfrac{z
 }{4\pi^2 z^2 + \kappa^2}\, z \in \mathbb{C}.$$
@@ -149,29 +148,30 @@ $$g(z):=e^{2\pi i z \lVert \mathbf{x}\rVert }
     caption="the contour $\gamma$ together with the two poles of $g(z)$."
 >}}
 
-then, we can break this contour integral into two pieces:
+we can break the contour integral into two pieces:
 $$
 \frac{1}{i \lVert \mathbf{x} \rVert}
 \oint_{\gamma}g(z)dz = 
 \frac{1}{i \lVert \mathbf{x} \rVert}
 \int_{-R}^R g(z) dz +
-\frac{1}{i \lVert \mathbf{x} \rVert} \int_{\\{Re^{i\theta} :\\, \theta \in [0, \pi]\\}} g(z)dz
+\frac{1}{i \lVert \mathbf{x} \rVert} \int_{\\{Re^{i\theta} :\\, 0 \leq \theta \leq \pi\\}} g(z)dz
 $$
 
 now, as $R\rightarrow\infty$, the second integral becomes $I_3(\mathbf{x})$ we're looking for. and,
-via Jordan's lemma, $\int_{\\{Re^{i\theta} :\\, \theta \in [0, \pi]\\}}g(z) dz \rightarrow 0$ as $R\rightarrow \infty$.
+via [Jordan's lemma](https://en.wikipedia.org/wiki/Jordan%27s_lemma), $\int_{\\{Re^{i\theta} :\\, 0 \leq \theta \leq \pi\\}}g(z) dz \rightarrow 0$ as $R\rightarrow \infty$.
 so:
 $$
 \frac{1}{i \lVert \mathbf{x} \rVert}
 \lim_{R\rightarrow\infty} \oint_{\gamma(R)}g(z)dz = 
-I_3(\mathbf{x})
+I_3(\mathbf{x}),
 $$
+where we note the contour $\gamma$ depends on $R$.
 
-via Cauchy's residue theorem:
+via [Cauchy's residue theorem](https://en.wikipedia.org/wiki/Residue_theorem):
 $$\oint_{\gamma}g(z)dz=2\pi i \text{Res}(g, \kappa/(2\pi)i)$$
 since the contour $\gamma$ encircles the pole $\kappa/(2\pi)i$ of the complex function $g(z)$ in a counter-clockwise fashion.
 
-calculating the residue:
+calculating the [residue](https://en.wikipedia.org/wiki/Residue_(complex_analysis)):
 $$\text{Res}(g, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\pi)i)g(z)=\frac{1}{8\pi^2}e^{-\kappa \lVert \mathbf{x} \rVert}$$
 
 finally, then:
@@ -189,14 +189,14 @@ $$u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} 
 
 going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume in 3D!
 
-$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}.$$
+$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}.}$$
 
 #### case $n=2$
 
 we write the integral $I_2(\mathbf{x})$ in polar coordinates $(r, \theta)$ with $r=\lVert \boldsymbol\omega\rVert$ the radius and $\theta$ the angle. 
 aligning the $x$-axis of this polar coordinate system with the vector $\mathbf{x}$, we can write:
 $$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \lVert \lVert \boldsymbol \omega \lVert \cos \theta$$
-and the integral becomes (recall, the area element in polar coordinates is $r drd\theta$):
+and the integral becomes (the area element in polar coordinates is $r drd\theta$):
 $$
 I_2(\mathbf{x})=
 \int_0^{2\pi}
