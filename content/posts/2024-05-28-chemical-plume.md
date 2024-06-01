@@ -189,7 +189,7 @@ $$u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} 
 
 going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume in 3D!
 
-$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}}.$$
+$$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)} \, \mathbf{x} \in \mathbb{R}^3}$$
 
 #### case $n=2$
 
@@ -208,11 +208,49 @@ r dr
 d\theta
 $$
 
-TODO
+we recognize the integral over $\theta$ as a function of $\lVert \mathbf{x} \rVert$ as related to the zero-order Bessel function of the first kind, whose integral representation (Hansen-Bessel formula) is:
+$$J_0(a):=\frac{1}{\pi} \int_0^\pi e^{i a \cos(\theta)}d\theta.$$
+by the power series representation of $J_0(a)$, it is an even function i.e. $J_0(a)=J_0(-a)$. so:
+$$\int_0^{2\pi} e^{i a \cos(\theta)}d\theta= \int_0^{\pi} e^{i a \cos(\theta)}d\theta+\int_\pi^{2\pi} e^{i a \cos(\theta)}d\theta=\pi J_0(a) + \int_0^{\pi} e^{-i a \cos(\theta)}d\theta = 2\pi J_0(a)$$
+
+so, we can involve $J_0(\cdot)$ in $I_2(\mathbf{x})$:
+$$
+I_2(\mathbf{x})=
+\int_0^{\infty}
+\dfrac{
+r
+}{4\pi^2 r^2 + \kappa^2}
+2\pi J_0(2\pi r \lVert \mathbf{x}\rVert)
+r dr=
+\frac{1}{2\pi}
+\int_0^{\infty}
+\dfrac{
+r
+}{r^2 + (\kappa/2\pi)^2}
+J_0(2\pi r \lVert \mathbf{x}\rVert)
+r dr
+$$
+
+next, we recognize this as resembling the Hankel-Nicholson integral:
+$$\int_0^\infty \frac{r}{r^2+z^2}J_0(a\theta) d\theta=K_0(az)$$
+where $K_0(\cdot)$ is the zero-order modified Bessel function of the second kind (perhaps, proof follows from the series representations of $J_0(\cdot)$ and $K_0(\cdot)$). this gives:
+$$
+I_2(\mathbf{x})=
+\frac{1}{2\pi}
+K_0(\kappa \lVert \mathbf{x} \rVert^2).
+$$
+
+(many numerical libraries, e.g. Python and Julia, provide implementations of $K_0(\cdot)$.)
+
+finally, using $I_2(\mathbf{x})$ to construct $u(\mathbf{x})$, then using $u(\mathbf{x})$ to construct $c(\mathbf{x})$, we have the shape of the chemical plume in 2D!
+$$\boxed{
+c(\mathbf{x})=
+\frac{R}{2\pi D} K_0(\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert)e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}
+\, \mathbf{x} \in \mathbb{R}^2}$$
 
 ### visualization
 
-TODO
+we use Julia to visualize the shape of the chemical plume in 2D.
 
 ## appendix
 
@@ -254,3 +292,5 @@ $$\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x})
 * "n-dimensional Fourier Transform, Ch. 8" notes by Prof. Brad Osgood. [link](https://see.stanford.edu/materials/lsoftaee261/chap8.pdf)
 * Vergassola, M., Villermaux, E., & Shraiman, B. I. (2007). ‘Infotaxis’ as a strategy for searching without gradients. Nature, 445 (7126), 406-409.
 * Yukawa Potential hw assignment from Dept. of Physics at Montana State University. [here](https://www.physics.montana.edu/avorontsov/teaching/phsx545/documents/problems07s.pdf)
+* Digital Library of Mathematical Functions, Ch. 10: Bessel Functions. [link](https://dlmf.nist.gov/10)
+* Abramowitz and Stegun. (1965). Handbook of Mathematical Functions.
