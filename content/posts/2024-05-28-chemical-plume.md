@@ -9,20 +9,20 @@ _author_: Cory Simon, Paul Morris
 ## a mathematical model of a chemical plume
 
 we wish to develop and find the solution to a simple mathematical model of a chemical plume, caused by the continuous release of the chemical from a point source, at steady-state conditions.
-such a model is useful for (i) predicting the extent and intensity of a chemical plume and (ii) searching for the source of a chemical plume using a mobile robot equipped with chemical sensors. 
+such a model is useful for (i) predicting the extent and intensity of a chemical plume and (ii) searching for the source of a chemical plume using mobile robots equipped with chemical sensors. 
 
 we treat the environment $\mathbb{R}^n$ ($n\in\\{2, 3\\}$) as spatially homogeneous and aim to account for four pieces of physics:
 1. the chemical is continuously released into the environment at a constant rate $R$ [g/min] from a point source at location $\mathbf{x}_0\in\mathbb{R}^n$.
 2. wind transports the chemical downwind through advection, with $\mathbf{v}\in\mathbb{R}^n$ [m/min] the (constant) mean wind vector.
 3. the chemical diffuses, owing to both molecular diffusivity and [dominant] turbulent diffusivity, with diffusion coefficient $D$ [m$^2$/min].
-4. the chemical decays, owing to e.g. chemical reaction with humidity or photodegradation (via ultraviolet radiation), with $\tau$ [min] the mean lifespan of the chemical.
+4. the chemical decays, owing to e.g. chemical reaction with humidity or photodegradation, with $\tau$ [min] the mean lifespan of the chemical.
 
 from these simple assumptions, we wish to model the function $c(\mathbf{x})$ [g/m$^n$], the average concentration of the chemical at a point $\mathbf{x}\in\mathbb{R}^n$ in the environment. 
 
 ### the steady-state diffusion-advection-decay equation
-invoking conservation of mass and accounting for the four pieces of physics listed above, we arrive at the steady-state [diffusion-advection-decay [partial differential] equation](https://en.wikipedia.org/wiki/Convection%E2%80%93diffusion_equation) with a point-source term:
+applying the law of conservation of mass and accounting for the four pieces of physics listed above, we arrive at the steady-state [diffusion-advection-decay [partial differential] equation](https://en.wikipedia.org/wiki/Convection%E2%80%93diffusion_equation) with a point-source term:
 $$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c(\mathbf{x}) - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x}) - \tau^{-1}c(\mathbf{x}) + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
-respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function and $\boldsymbol \nabla\_\mathbf{x}:=[\frac{\partial }{\partial x\_1}, \frac{\partial }{\partial x\_2}]$ for $n=2$.)
+respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function and e.g. $\boldsymbol \nabla\_\mathbf{x}:=[\frac{\partial }{\partial x\_1}, \frac{\partial }{\partial x\_2}]$ for $n=2$.)
 
 {{<figure
     src="/blog/plume/eqn.jpeg"
@@ -237,7 +237,7 @@ where $K_0(\cdot)$ is the [zero-order modified Bessel function of the second kin
 $$
 I_2(\mathbf{x})=
 \frac{1}{2\pi}
-K_0(\kappa \lVert \mathbf{x} \rVert^2).
+K_0(\kappa \lVert \mathbf{x} \rVert).
 $$
 
 (many numerical libraries, e.g. Python and Julia, provide implementations of $K_0(\cdot)$. e.g. [Scipy](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.k0.html).)
