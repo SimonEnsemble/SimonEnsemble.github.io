@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.40
+# v0.19.42
 
 using Markdown
 using InteractiveUtils
@@ -25,6 +25,10 @@ md"
 # numerically solving a linear program in Julia
 
 [learn by example!]
+
+!!! note
+	to learn about the theory behind linear programming, I recommend the textbook (Ch. 7):
+	> S. Dasgupta, C. H. Papadimitriou, and U. V. Vazirani. Algorithms. (2006)
 
 ## 🍺 problem setup
 
