@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.42
+# v0.19.40
 
 using Markdown
 using InteractiveUtils
@@ -231,6 +231,14 @@ opt_soln = Dict(brew => value(x[brew]) for brew in brews)
 # ╔═╡ 984ca36e-ae08-492f-9e62-257a00cdeafc
 opt_profit = solution_summary(model).objective_value
 
+# ╔═╡ 797a4e4e-84bf-450c-9653-149395cda551
+barplot(
+	1:2, [opt_soln[brew] for brew in brews],
+	axis=(; 
+		ylabel="# barrels", xticks=(1:2, brews), title="optimal solution", limits=(nothing, nothing, 0, nothing)
+	)
+)
+
 # ╔═╡ e1dc7caa-9ad5-4ca3-a90e-80d90e54fe82
 resources_left = Dict(
 	res => our_resources[res] - sum(
@@ -238,6 +246,14 @@ resources_left = Dict(
 		for brew in brews
 	)
 	for res in resources
+)
+
+# ╔═╡ fb129a16-3390-42cd-898c-56e75d18ad20
+barplot(
+	1:3, [resources_left[res] for res in resources], color=Cycled(2),
+	axis=(; 
+		ylabel="kg", xticks=(1:3, resources), title="resources left", limits=(nothing, nothing, 0, nothing)
+	)
 )
 
 # ╔═╡ 8cd2c9c9-473a-4d53-9696-cfc9de8edeb6
@@ -360,7 +376,9 @@ end
 # ╟─33ce18b0-ab90-43d5-9592-788f849f36eb
 # ╠═e5874d3e-f89e-4ca6-b97b-9391adef8615
 # ╠═984ca36e-ae08-492f-9e62-257a00cdeafc
+# ╠═797a4e4e-84bf-450c-9653-149395cda551
 # ╠═e1dc7caa-9ad5-4ca3-a90e-80d90e54fe82
+# ╠═fb129a16-3390-42cd-898c-56e75d18ad20
 # ╟─8cd2c9c9-473a-4d53-9696-cfc9de8edeb6
 # ╟─4ac7625d-9cda-48ed-bf46-c94d453ac01f
 # ╠═929802a9-d2a0-4df1-8368-02118961378e
