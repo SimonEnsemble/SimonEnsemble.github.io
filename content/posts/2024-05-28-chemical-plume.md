@@ -48,6 +48,8 @@ with
 $$\kappa^2:= \frac{\lVert \mathbf{v} \rVert^2+4 \tau^{-1}D}{4D^2}.$$
 the latter equality holds because the Dirac delta flattens the exponential term except for at $\mathbf{x}_0$.
 
+note, $\kappa^{-1}$ is a characteristic length-scale governing the dispersion of the chemical.
+
 we now focus on finding the solution $u(\mathbf{x})$ to this modified Helmholtz problem, from which $c(\mathbf{x})$ follows.
 
 ## solution 
@@ -317,6 +319,31 @@ voila!
     caption="visualization of $c(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^2$."
 >}}
 
+## modeling the sensor
+
+we now model how a chemical sensor, on a mobile robot at position $\mathbf{x}$, detects the chemical. we've established the mean concentration $c(\mathbf{x})$ in the environment, but at the smaller scale near the sensing element, there will be a concentration gradient owing to adsorption/reaction of the gas on the surface of the sensing element.
+
+we consider the $n=2$ case only.
+
+we assume:
+* the surface of the sensing element:
+    * is a circle of radius $a$.
+    * presents binding sites that adsorb and catalyze degradation of the chemical from the gas phase. so, the concentration of gas near the sensing element is zero.
+* sufficiently far from the surface of the sensor, the concentration in the gas is that in the bulk, $c(\mathbf{x})$. 
+* steady-state conditions.
+
+treating only the diffusion at this length-scale, the concentration near the sensor is radially symmetric, with $c_s(r)$ with $r \in [0, \kappa^{-1}]$ the distance from the sensor, satisfies the steady-state diffusion equation in polar coordinates:
+$$\frac{\mathrm{d}^2c\_s}{\mathrm{d}r^2}+\frac{1}{r}\frac{\mathrm{d}c\_s}{\mathrm{d}r} =\frac{1}{r}\frac{\mathrm{d}}{\mathrm{d}r} \left( r\frac{\mathrm{d} c\_s}{\mathrm{d} r}\right) = 0$$
+integrating twice then applying the boundary conditions $c_s(a)=0$ and $c\_s(\kappa^{-1})=c(\mathbf{x})$, with the length-scale $\kappa^{-1}$ dictating how far from the sensor the concentration equals the bulk, gives:
+$$c\_s(r) = c(\mathbf{x}) \frac{\log(r/a)}{\log(\kappa^{-1}/a)}.$$
+
+now, the response/signal from the chemical sensor is proportional to the flux of gas impinging on its surface, due to diffusion. multiplying by the circumference of the sensor gives the rate at which gas molecules impinge onto the sensing element:
+$$J=(2\pi a)D\frac{\mathrm{d} c\_s}{\mathrm{d} r} \bigg \rvert_{r=a}.$$
+this gives us eqn. (7) in the SI of the Infotaxis paper:
+$$J(\mathbf{x})=\frac{R}{\log(\kappa^{-1}/a)}K_0(\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert)e^{\mathbf{v} \cdot (\mathbf{x}-\mathbf{x}\_0)/(2D)}.$$
+
+thus, when a sensor stays at position $\mathbf{x}$ for a duration $\Delta t$ to detect the chemical, we expect $J(\mathbf{x})\Delta t$ g of the chemical to be detected.
+
 ## appendix
 
 ### the Fourier transform
@@ -356,6 +383,7 @@ $$\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x})
 ## references
 * "n-dimensional Fourier Transform, Ch. 8" notes by Prof. Brad Osgood. [link](https://see.stanford.edu/materials/lsoftaee261/chap8.pdf)
 * Vergassola, M., Villermaux, E., & Shraiman, B. I. (2007). ‘Infotaxis’ as a strategy for searching without gradients. Nature, 445 (7126), 406-409.
+* Loisy, Aurore, and Christophe Eloy. "Searching for a source without gradients: how good is infotaxis and how to beat it." Proceedings of the Royal Society A 478, no. 2262 (2022): 20220118.
 * Yukawa Potential hw assignment from Dept. of Physics at Montana State University. [here](https://www.physics.montana.edu/avorontsov/teaching/phsx545/documents/problems07s.pdf)
 * Digital Library of Mathematical Functions, Ch. 10: Bessel Functions. [link](https://dlmf.nist.gov/10)
 * Abramowitz and Stegun. (1965). Handbook of Mathematical Functions.
