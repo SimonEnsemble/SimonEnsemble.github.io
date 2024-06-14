@@ -1,3 +1,9 @@
+## Paul will intern at Los Alamos National Lab again!
+
+as a PhD intern for Los Alamos National Lab, Paul Morris will use the Quick Urban & Industrial Complex (QUIC) Dispersion Modeling System to simulate the dispersion of chemical plumes in realistic, urban environments.
+
+{{< figure src="/ppl_photos/paul_at_lab.png" width="50%">}}
+
 ## Gbenga will be a data science intern at Amazon!
 
 mega-congratulations to Gbenga Fabusola, a PhD student in our group, who will spend the summer as a data science intern at Amazon in Seattle!
