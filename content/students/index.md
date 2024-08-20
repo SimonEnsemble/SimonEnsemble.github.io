@@ -37,7 +37,7 @@
 {{< student 
   name="Kyrstin Datanagan"
   degree="Chemical Engineering major"
-  about="In my free time, I enjoy reading my bible, working out, taking care of my Guinea pigs, playing Magic the Gathering, as well as playing Warhammer."
+  about="In my free time, I enjoy reading my bible, working out, taking care of my guinea pigs, playing Magic the Gathering, as well as playing Warhammer."
   research="training machine learning models to predict optical properties of Ag nanoparticles sculpted by DNA"
   photo="/ppl_photos/kyrstin.jpeg"
 >}}
