@@ -32,42 +32,23 @@
   photo="/ppl_photos/qia_ke.jpeg"
 >}}
 
-# visiting phd students
-
-{{< student 
-  name="Gabriel Augusto"
-  degree="B. Tech Systems Analysis and Development, São Paulo State College of Technology; M.S. Applied Computing, National Institute for Space Research"
-  about="I enjoy traveling to new places and learning about different cultures. Also, I like listening to good songs and practicing sports in general."
-  research="neural networks, machine learning, self-supervised learning, and their applications in interdisciplinary problems."
-  photo="/ppl_photos/gabriel.jpg"
->}}
-
 # ugrad students
 
 {{< student 
-  name="Clayton Amerman"
-  degree="Bioengineering"
-  about="I enjoy rock climbing, baking, listening to new music, most arts and crafts, and just trying new things in general."
-  research="mathematical modeling of Mayan chultuns."
-  photo="/ppl_photos/clayton.JPG"
+  name="Kyrstin Datanagan"
+  degree="Chemical Engineering major"
+  about="In my free time, I enjoy reading my bible, working out, taking care of my Guinea pigs, playing Magic the Gathering, as well as playing Warhammer."
+  research="training machine learning models to predict optical properties of Ag nanoparticles sculpted by DNA"
+  photo="/ppl_photos/kyrstin.jpeg"
 >}}
 
 {{< student 
-    name="Daniel Casey-Hain"
-    degree="Chemical Engineering"
-    about="My favorite activity is biking while listening to music. My favorite book is The Sirens of Titan."
-    research="Using kernel functions as a similarity metric between pairs of molecules for machine learning tasks."
-    photo="/ppl_photos/daniel.png"
+  name="Charles Harriman"
+  degree="Chemical Engineering major"
+  about="My hobbies include soccer and hiking."
+  research="thermodynamic modeling and optimization to design MOF-based water harvesters tailored to geographic regions"
+  photo="/ppl_photos/charles.jpeg"
 >}}
-
-{{< student 
-    name="Sebastian Vaughan"
-    degree="Chemical Engineering"
-    research="Using thermodynamic models and optimization algorithms to maximizeproduction from water harvesters."
-    about="My interests include process simulation, data science, and Magic the Gathering"
-    photo="/ppl_photos/sebastian.png"
->}}
-
 
 # alums
 
@@ -130,3 +111,14 @@
 
 * Tristan Gavin. Computer Science (minor in Mathematics)
     * _now_: Software Engineer, SpaceX
+
+* Daniel Casey-Hain
+    * _now_: PhD student in Chemical Engineering at UIUC
+
+* Clayton Amerman
+
+* Sebastian Vaughan
+
+## visiting PhD students
+* Gabriel Augusto. Visiting PhD student (1 year) from Federal University of São Paulo. 
+
