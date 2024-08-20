@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Computationally predicting the performance of gas sensor arrays for anomaly detection
+  authors: P. Morris, C. Simon
+  journal: Sensors & Diagnostics
+  year: 2024
+  url: https://pubs.rsc.org/en/content/articlelanding/2024/sd/d4sd00121d
+  image: pubs/paul_paper.png
+
 - title: Multi-fidelity Bayesian Optimization of Covalent Organic Frameworks for Xenon/Krypton Separations
   authors: N. Gantzler, A. Deshwal, J. Doppa, C. Simon
   journal: Digital Discovery
