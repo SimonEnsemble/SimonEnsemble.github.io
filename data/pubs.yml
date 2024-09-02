@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Inferring the shape of a solid inside a draining tank from its liquid level dynamics
+  authors: G. Fabusola, C. Simon
+  journal: arXiv
+  year: 2024
+  url: https://arxiv.org/abs/2408.14503
+  image: pubs/tank_inv_prob.jpg
+
 - title: Computationally predicting the performance of gas sensor arrays for anomaly detection
   authors: P. Morris, C. Simon
   journal: Sensors & Diagnostics
