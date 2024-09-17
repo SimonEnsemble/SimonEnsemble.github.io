@@ -1,3 +1,10 @@
+## Adrian → Dr. Henle!
+
+congratulations to Adrian Henle for graduating with his PhD in Chemical Engineering, the third PhD out of our research group! Adrian's landmark achievement is, in my view, [`PoreMatMod.jl`](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01219), an open-source Julia package for find-and-replace on crystal structure models.
+check out [his thesis](https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/qj72ph60t) "Graph-Based Algorithms and Machine Learning Approaches for Molecular Property Prediction and Material Design" for more. thank you, Adrian, for your contributions to our research group!
+
+{{< figure src="/ppl_photos/adrian_phd.jpeg" width="50%">}}
+
 ## Paul will intern at Los Alamos National Lab again!
 
 as a PhD intern for Los Alamos National Lab, Paul Morris will use the Quick Urban & Industrial Complex (QUIC) Dispersion Modeling System to simulate the dispersion of chemical plumes in realistic, urban environments.
