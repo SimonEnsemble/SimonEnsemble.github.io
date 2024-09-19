@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Bi-objective trail-planning for a robot team orienteering in a hazardous environment
+  authors: C. Simon, J. Richley, L. Overbey, D. Perez-Lavin
+  journal: arXiv
+  year: 2024
+  url: https://arxiv.org/abs/2409.12114
+  image: pubs/TOHE.png
+
 - title: Inferring the shape of a solid inside a draining tank from its liquid level dynamics
   authors: G. Fabusola, C. Simon
   journal: arXiv
