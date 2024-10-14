@@ -1,14 +1,6 @@
 # phd students
 
 {{< student 
- name="Adrian Henle"
-  degree="B.S. Chemistry, Seattle University. B.S. Computer Science, Oregon State University. M.S. Chemistry, University of Oregon."
-  about="I enjoy skiing, hiking, gardening, and cats, but my raison d'être is raising my daughter, Sophie, with my wife, Samantha. A secondary obsession of mine is finding questionably utile applications of microcontrollers in everyday life."
-  research="applying machine learning to enable high-throughput prediction of porous material properties."
-  photo="/ppl_photos/adrian.png"
->}}
-
-{{< student 
  name="Gbenga Fabusola"
   degree="B. Tech Industrial Chemistry."
   about="I have a soft spot for fitness and good music. Good food will be preferable with the music too."
@@ -62,6 +54,10 @@
     * _thesis_: "In Silico Screening of Nanoporous Materials for Gas Sensing and Separation"
     * _now_: postdoc at Sandia National Labs
     * [Google Scholar](https://scholar.google.com/citations?user=86bzumwAAAAJ&hl=en)
+
+* Adrian Henle. PhD, Chemical Engineering
+    * _thesis_: "Graph-Based Algorithms and Machine Learning Approaches for Molecular Property Prediction and Material Design"
+    * [Google Scholar](https://scholar.google.com/citations?user=s8a0NmYAAAAJ&hl=en)
 
 ## ms 
 * Ping Yang. MS, Chemical Engineering. 
