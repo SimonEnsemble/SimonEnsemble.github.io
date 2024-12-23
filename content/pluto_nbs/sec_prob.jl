@@ -16,6 +16,12 @@ end
 # ╔═╡ be97b1d7-fe22-4112-bb20-19e5bede769b
 colors = MakieThemes.GGThemr.ColorTheme[:lilac][:swatch]
 
+# ╔═╡ 4d03b774-6114-4632-88ed-d698e3a54342
+bkg_color = MakieThemes.GGThemr.ColorTheme[:lilac][:background]
+
+# ╔═╡ aa08c613-192c-4e89-9bab-6b42fe64918f
+probability_cmap = reverse(ColorSchemes.acton)
+
 # ╔═╡ cfffd689-2318-4653-99b8-152c4bc2fdaf
 md"## policy independent MC"
 
@@ -41,14 +47,13 @@ end
 function viz_g(
 	g::DiGraph,
 	mode::String="policy",
-	P::Union{Nothing, Matrix{Float64}}=nothing
+	P::Union{Nothing, Matrix{Float64}}=nothing;
+	t★::Union{Nothing, Int}=nothing
 )
 	@assert mode in ["policy", "non-policy"]
 
 	# number of candidates
 	n = mode == "policy" ? nv(g) - 2 : nv(g) - 1
-	
-	colormap = reverse(ColorSchemes.acton)
 	
 	fig = Figure()#size=(450, 450))
 	ax = Axis(fig[1, 1])
@@ -78,7 +83,7 @@ function viz_g(
 	if ! isnothing(P)
 		elabels = [p_to_label(P[ed.src, ed.dst]) for ed in edges(g)]
 		edge_color = [
-			get(colormap, P[ed.src, ed.dst], (0.0, 0.5)) 
+			get(probability_cmap, P[ed.src, ed.dst], (0.0, 0.5)) 
 				for ed in edges(g)
 		]
 	else
@@ -106,15 +111,17 @@ function viz_g(
 	)
 	if ! isnothing(P)
 		Colorbar(
-			fig[1, 2], colormap=colormap, 
-			label="transition probability", limits=(0, 0.5)
+			fig[1, 2], colormap=probability_cmap, 
+			label="transition probability", limits=(0, 1.0)
 		)
 	end
-	# if ! isnothing(π)
-	# 	Colorbar(
-	# 		fig[1, 3], colormap=ColorSchemes.Blues, label="probability", limits=(0.0, maximum(π))
-	# 	)
-	# end
+	if ! isnothing(t★)
+		@assert mode == "policy"
+		Label(
+			fig[1, 1], "t*=$t★", tellwidth=false, tellheight=false,
+			halign=0.8, valign=0.8
+		)
+	end
 	fig
 end
 
@@ -163,25 +170,26 @@ function viz_P(P::Matrix{Float64}, mode::String)
 	)
 
 	# hack to make p = 0.0 map to white
-	colormap = vcat(ColorSchemes.grays[1.0], ColorSchemes.viridis[0.0:0.01:1.0])
+	colormap = vcat(bkg_color, probability_cmap[0.0:0.01:1.0])
+	#ColorSchemes.viridis[0.0:0.01:1.0])
 	hm = heatmap!(P, colorrange=(0, 1), colormap=colormap)
 	Colorbar(fig[1, 2], hm, label="transition probability")
 	fig
 end
 
 # ╔═╡ a96c1505-5851-4e48-a52b-98a02576a8c3
-function viz_π(π::Vector{Float64}, mode::String)
+function viz_π(π::Vector{Float64}, mode::String, t::Int)
 	n = mode == "policy" ? length(π) - 2 : length(π) - 1
 	
 	ticklabels = gimme_tick_labels(n, mode)
 
 	fig = Figure()
 	ax = Axis(
-		fig[1, 1], xlabel="state", ylabel="probability",
+		fig[1, 1], xlabel="stage, t", ylabel=rich("ℙ(T", subscript("$t"), "=t)"),
 		xticks=(1:length(π), ticklabels)
 	)
 	ylims!(0, 1)
-	barplot!(π)
+	barplot!(π, color=[get(probability_cmap, πᵢ) for πᵢ in π])
 	fig
 end
 
@@ -199,8 +207,13 @@ end
 # ╔═╡ 2b685bbc-a6f7-4693-98c0-7481e2cfe571
 π₀ = gimmie_π₀(n, "non-policy")
 
+# ╔═╡ e24e6587-f41d-4f05-bb32-260463c9b4dd
+t = 2
+
 # ╔═╡ c99e89a9-1480-4e35-8621-a5b07cc336fe
-md"## policy-dependent MC"
+md"## policy-dependent MC
+ $t^*$: after that or equal to that stage select the candidate.
+"
 
 # ╔═╡ e98898b5-4437-4fe5-92d6-f1fb035331a8
 function MC_graph(n::Int, t★::Int)
@@ -282,10 +295,10 @@ viz_g(g, "non-policy", P)
 viz_P(P, "non-policy")
 
 # ╔═╡ 9e3251d3-d44d-4df8-ae14-2550167fc3cb
-π = π₀' * P ^ 2
+π = π₀' * P ^ t
 
 # ╔═╡ a4d206a5-46aa-4527-b713-f939f3f02688
-viz_π(π[:], "non-policy")
+viz_π(π[:], "non-policy", t)
 
 # ╔═╡ 1e8d615d-25e8-4c2b-be16-4a372670ec0c
 t★ = 3 # policy
@@ -300,16 +313,16 @@ P_policy = MC_transition_matrix(n, t★)
 viz_P(P_policy, "policy")
 
 # ╔═╡ 1d909b88-9b4a-45cd-b883-6ec8ab57e09f
-P_policy * ones(n+2)
+@test P_policy * ones(n+2) == ones(n+2)
 
 # ╔═╡ 5f7eb3a5-1263-4054-b618-0d9973b41ada
-viz_g(g_policy, "non-policy", P_policy)
+viz_g(g_policy, "policy", P_policy, t★=t★)
 
 # ╔═╡ cbf80fcc-155b-4cc1-bbd3-8c0024f59fac
-π_policy = gimmie_π₀(n, "policy")' * P_policy ^ 3
+π_policy = gimmie_π₀(n, "policy")' * P_policy ^ t
 
 # ╔═╡ 1d7f9db9-98d7-4be0-b90b-959d1ec9be1e
-viz_π(π_policy[:], "policy")
+viz_π(π_policy[:], "policy", t)
 
 # ╔═╡ f5982842-2310-47d4-93dc-3a223f439781
 function p_win(n::Int, t★::Int)
@@ -329,8 +342,19 @@ function viz_p_wins(n::Int)
 		xlabel=rich("stage after we accept candidate, t", superscript("*")),
 		ylabel="ℙ(win)"
 	)
-	scatterlines!(1:n, [p_win(n, t★) for t★=1:n])
-	ylims!(0, 1)
+
+	# computations
+	p_wins = [p_win(n, t★) for t★=1:n]
+	t★_opt = argmax(p_wins)
+	p_opt = maximum(p_wins)
+	@show t★_opt, p_opt
+	
+	scatterlines!(1:n, p_wins)
+	lines!(
+		[t★_opt, t★_opt], [0, p_opt], 
+		linestyle=:dash, color=colors[1], linewidth=2
+	)
+	ylims!(0, 0.5)
 	fig
 end
 
@@ -346,15 +370,14 @@ n_big = 80
 # ╔═╡ f6dea05b-53c8-45cb-9e99-840728bb9feb
 viz_P(MC_transition_matrix(n_big), "non-policy")
 
-# ╔═╡ d141c185-82e7-4b04-a70d-73418b1782c2
-p_successes = [(π₀_policy(80)' * policy_dependent_P(80, t) ^ 80)[end] for t = 1:80]
-
-# ╔═╡ ba32cef1-d203-40cd-9cc6-916656070700
-lines(1:80, p_successes)
+# ╔═╡ 1af4f256-9631-41ae-8241-a28f5dae3400
+viz_p_wins(80)
 
 # ╔═╡ Cell order:
 # ╠═dbbcbf84-be7d-11ef-3384-2b2a69580c7a
 # ╠═be97b1d7-fe22-4112-bb20-19e5bede769b
+# ╠═4d03b774-6114-4632-88ed-d698e3a54342
+# ╠═aa08c613-192c-4e89-9bab-6b42fe64918f
 # ╟─cfffd689-2318-4653-99b8-152c4bc2fdaf
 # ╠═d5c07c6f-0bbc-428d-a1b1-dde60d406cfe
 # ╠═a0d12780-5ab2-48d0-9854-4fa73a268ae4
@@ -371,6 +394,7 @@ lines(1:80, p_successes)
 # ╠═a96c1505-5851-4e48-a52b-98a02576a8c3
 # ╠═2b685bbc-a6f7-4693-98c0-7481e2cfe571
 # ╠═b64569d1-3825-4569-a648-f33b278ff002
+# ╠═e24e6587-f41d-4f05-bb32-260463c9b4dd
 # ╠═9e3251d3-d44d-4df8-ae14-2550167fc3cb
 # ╠═a4d206a5-46aa-4527-b713-f939f3f02688
 # ╟─c99e89a9-1480-4e35-8621-a5b07cc336fe
@@ -391,5 +415,4 @@ lines(1:80, p_successes)
 # ╟─ace6fd4f-9d0a-47c4-b5e2-bbdb4e9866e8
 # ╠═c7630eb9-0e98-428f-a3cc-0080ed5918e5
 # ╠═f6dea05b-53c8-45cb-9e99-840728bb9feb
-# ╠═d141c185-82e7-4b04-a70d-73418b1782c2
-# ╠═ba32cef1-d203-40cd-9cc6-916656070700
+# ╠═1af4f256-9631-41ae-8241-a28f5dae3400
