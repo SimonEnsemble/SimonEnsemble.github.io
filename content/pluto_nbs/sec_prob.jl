@@ -122,6 +122,7 @@ function viz_g(
 			halign=0.8, valign=0.8
 		)
 	end
+	save("g_$mode.pdf", fig)
 	fig
 end
 
@@ -162,8 +163,8 @@ function viz_P(P::Matrix{Float64}, mode::String)
 	ax = Axis(
 		fig[1, 1], 
 		titlesize=25,
-		xlabel=rich("arrival time of candidate, t", subscript("i")),
-		ylabel=rich("arrival time of next candidate, t", subscript("i+1")),
+		xlabel="current state",
+		ylabel="next state",
 		xticks=(1:size(P)[1], ticklabels),
 		yticks=(1:size(P)[1], ticklabels),
 		aspect=DataAspect()
@@ -173,7 +174,8 @@ function viz_P(P::Matrix{Float64}, mode::String)
 	colormap = vcat(bkg_color, probability_cmap[0.0:0.01:1.0])
 	#ColorSchemes.viridis[0.0:0.01:1.0])
 	hm = heatmap!(P, colorrange=(0, 1), colormap=colormap)
-	Colorbar(fig[1, 2], hm, label="transition probability")
+	Colorbar(fig[1, 2], hm, label="transition probability", ticks=[i/4 for i = 0:4])
+	save("P_$mode.pdf", fig)
 	fig
 end
 
@@ -204,6 +206,42 @@ function gimmie_π₀(n::Int, mode::String)
 	return π₀
 end
 
+# ╔═╡ a45403a5-fc90-44c3-aff8-37d5d3b90421
+function viz_πs(P::Matrix{Float64}, mode::String, t_max::Int)
+	n = mode == "policy" ? size(P)[1] - 2 : size(P)[1] - 1
+	
+	π₀ = gimmie_π₀(n, mode)
+	
+	ticklabels = gimme_tick_labels(n, mode)
+
+	fig = Figure()
+	axs = [Axis(
+			fig[t+1, 1], 
+			ylabel=rich("ℙ(T", subscript("$t"), "=s)")
+		) 
+		for t = 0:t_max
+	]
+	linkaxes!(axs...)
+	linkyaxes!(axs...)
+	axs[end].xlabel = "state, s"
+	
+	for t = 0:t_max
+		ylims!(axs[t+1], 0, 1)
+		
+		if t == t_max
+			axs[t+1].xticks = (1:size(P)[1], ticklabels)
+		else
+			axs[t+1].xticks = (1:size(P)[1], ["" for _ in ticklabels])
+		end
+		
+		π = π₀' * P ^ t
+		
+		barplot!(axs[t+1], π[:], color=[get(probability_cmap, πᵢ) for πᵢ in π[:]])
+	end
+	save("pi_over_time.pdf", fig)
+	fig
+end
+
 # ╔═╡ 2b685bbc-a6f7-4693-98c0-7481e2cfe571
 π₀ = gimmie_π₀(n, "non-policy")
 
@@ -226,7 +264,7 @@ function MC_graph(n::Int, t★::Int)
 	add_edge!(g, W, W)
 	
 	for t = 1:n
-		if t < t★
+		if t ≤ t★
 			# reject candidate. can only lose right after.
 			add_edge!(g, t, L)
 		else
@@ -237,7 +275,7 @@ function MC_graph(n::Int, t★::Int)
 		# ah, can't lose if see candidate at end
 		rem_edge!(g, n, L)
 		for t_next = t+1:n
-			if t < t★
+			if t ≤ t★
 				add_edge!(g, t, t_next)
 			end
 		end
@@ -258,7 +296,7 @@ function MC_transition_matrix(n::Int, t★::Int)
 	# state n + 1: lose
 	# state n + 2: win
 	for t = 1:n # time candidate i observed
-		if t < t★
+		if t ≤ t★
 			# possibility we lose, by this candidate, who we reject, being #1
 			P[t, L] = t / n
 		else
@@ -269,7 +307,7 @@ function MC_transition_matrix(n::Int, t★::Int)
 		end
 		
 		for t_next = t+1:n # time at which candidate i+1 observed
-			if t < t★ # only continue observing candidates under this condition
+			if t ≤ t★ # only continue observing candidates under this condition
 				P[t, t_next] = t / (t_next * (t_next - 1))
 			end
 		end
@@ -301,7 +339,7 @@ viz_P(P, "non-policy")
 viz_π(π[:], "non-policy", t)
 
 # ╔═╡ 1e8d615d-25e8-4c2b-be16-4a372670ec0c
-t★ = 3 # policy
+t★ = 2 # policy
 
 # ╔═╡ 02f29171-3438-4620-a6f2-8f95624fca7b
 g_policy = MC_graph(n, t★)
@@ -324,37 +362,41 @@ viz_g(g_policy, "policy", P_policy, t★=t★)
 # ╔═╡ 1d7f9db9-98d7-4be0-b90b-959d1ec9be1e
 viz_π(π_policy[:], "policy", t)
 
+# ╔═╡ 06484fb8-5ddf-4e9f-9178-1fee8aa33add
+viz_πs(P_policy, "policy", t★+1)
+
 # ╔═╡ f5982842-2310-47d4-93dc-3a223f439781
 function p_win(n::Int, t★::Int)
 	P = MC_transition_matrix(n, t★)
-	π_t★ = gimmie_π₀(n, "policy")' * P ^ t★
+	π_t★ = gimmie_π₀(n, "policy")' * P ^ (t★+1)
 	return π_t★[end]
 end
 
 # ╔═╡ 37753f25-c165-4e5d-9959-5f5238b94a1a
-p_wins = [p_win(n, t★) for t★=1:n]
+p_wins = [p_win(n, t★) for t★=0:n-1]
 
 # ╔═╡ 4331d0ea-d709-4798-a4a5-01c8b20525bb
 function viz_p_wins(n::Int)
 	fig = Figure()
 	ax = Axis(
 		fig[1, 1],
-		xlabel=rich("stage after we accept candidate, t", superscript("*")),
-		ylabel="ℙ(win)"
+		xlabel=rich("length of observation phase, t", superscript("*")),
+		ylabel=rich("p", subscript("W"), superscript("(t*=$t★)"))
 	)
 
 	# computations
-	p_wins = [p_win(n, t★) for t★=1:n]
+	p_wins = [p_win(n, t★) for t★=0:n-1]
 	t★_opt = argmax(p_wins)
 	p_opt = maximum(p_wins)
-	@show t★_opt, p_opt
+	@show t★_opt-1, p_opt
 	
-	scatterlines!(1:n, p_wins)
+	scatterlines!(0:n-1, p_wins)
 	lines!(
-		[t★_opt, t★_opt], [0, p_opt], 
+		[t★_opt-1, t★_opt-1], [0, p_opt], 
 		linestyle=:dash, color=colors[1], linewidth=2
 	)
 	ylims!(0, 0.5)
+	save("p_win_$n.pdf", fig)
 	fig
 end
 
@@ -392,6 +434,7 @@ viz_p_wins(80)
 # ╠═9e255ead-d995-4da5-b64d-615003cc55c8
 # ╠═c13431c0-1a8a-437d-b947-9b3d8c783fe4
 # ╠═a96c1505-5851-4e48-a52b-98a02576a8c3
+# ╠═a45403a5-fc90-44c3-aff8-37d5d3b90421
 # ╠═2b685bbc-a6f7-4693-98c0-7481e2cfe571
 # ╠═b64569d1-3825-4569-a648-f33b278ff002
 # ╠═e24e6587-f41d-4f05-bb32-260463c9b4dd
@@ -408,6 +451,7 @@ viz_p_wins(80)
 # ╠═5f7eb3a5-1263-4054-b618-0d9973b41ada
 # ╠═cbf80fcc-155b-4cc1-bbd3-8c0024f59fac
 # ╠═1d7f9db9-98d7-4be0-b90b-959d1ec9be1e
+# ╠═06484fb8-5ddf-4e9f-9178-1fee8aa33add
 # ╠═f5982842-2310-47d4-93dc-3a223f439781
 # ╠═37753f25-c165-4e5d-9959-5f5238b94a1a
 # ╠═4331d0ea-d709-4798-a4a5-01c8b20525bb
