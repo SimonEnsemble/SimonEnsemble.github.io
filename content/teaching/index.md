@@ -4,6 +4,10 @@
 Perfection is attained not when there is nothing more to add, but when there is nothing more to remove. -- Antoine de Saint Exupéry
 {{< /hint >}}
 
+{{< hint >}}
+I cannot teach anybody anything. I can only make them think. -- Socrates
+{{< /hint >}}
+
 ## courses
 CHE 443, Chemical Reaction Engineering. (fall quarter)
 
