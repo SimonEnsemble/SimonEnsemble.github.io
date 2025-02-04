@@ -25,6 +25,10 @@ to learn more about MOFs, see "The Chemistry and Applications of Metal-Organic F
 # list of start-ups working on the commercialization of MOFs
 several start-up companies are working on commercializing MOFs for various applications.
 
+**update (Feb. 3, 2025)**: see
+*  ["A market for metal–organic frameworks"](https://www.nature.com/articles/s41563-025-02147-4) 
+* ["Transitioning metal–organic frameworks from the laboratory to market through applied research"](https://www.nature.com/articles/s41563-024-01947-4).
+
 ## ACSYNAM
 website: [acsynam.com](https://acsynam.com/)
 
@@ -75,8 +79,6 @@ website: [wahainc.com](http://www.wahainc.com/)
 
 ## ZoraMat
 website: [zoramat.com](https://zoramat.com/)
-
-
 
 # acknowledgements
 thanks to
