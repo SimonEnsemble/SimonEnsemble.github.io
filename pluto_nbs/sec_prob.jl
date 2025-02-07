@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.3
+# v0.20.4
 
 using Markdown
 using InteractiveUtils
@@ -163,8 +163,10 @@ function viz_P(P::Matrix{Float64}, mode::String)
 	ax = Axis(
 		fig[1, 1], 
 		titlesize=25,
-		xlabel="current state",
-		ylabel="next state",
+		rightspinevisible=true,
+		topspinevisible=true,
+		xlabel="current state, t",
+		ylabel="next state, t′",
 		xticks=(1:size(P)[1], ticklabels),
 		yticks=(1:size(P)[1], ticklabels),
 		aspect=DataAspect()
@@ -217,13 +219,13 @@ function viz_πs(P::Matrix{Float64}, mode::String, t_max::Int)
 	fig = Figure()
 	axs = [Axis(
 			fig[t+1, 1], 
-			ylabel=rich("ℙ(T", subscript("$t"), "=s)")
+			ylabel=rich("ℙ(T", subscript("$t"), "=t)")
 		) 
 		for t = 0:t_max
 	]
 	linkaxes!(axs...)
 	linkyaxes!(axs...)
-	axs[end].xlabel = "state, s"
+	axs[end].xlabel = "state, t"
 	
 	for t = 0:t_max
 		ylims!(axs[t+1], 0, 1)
@@ -381,7 +383,7 @@ function viz_p_wins(n::Int)
 	ax = Axis(
 		fig[1, 1],
 		xlabel=rich("length of observation phase, t", superscript("*")),
-		ylabel=rich("p", subscript("W"), superscript("(t*=$t★)"))
+		ylabel=rich("probability of hiring best, p", subscript("W"), "(t*)")
 	)
 
 	# computations
@@ -414,6 +416,15 @@ viz_P(MC_transition_matrix(n_big), "non-policy")
 
 # ╔═╡ 1af4f256-9631-41ae-8241-a28f5dae3400
 viz_p_wins(80)
+
+# ╔═╡ 74e48e7e-0f30-459c-928a-7ed1e4d50c6c
+1 / exp(1)
+
+# ╔═╡ 837f94e4-055a-41cd-89c6-0a605bd54321
+viz_p_wins(500)
+
+# ╔═╡ d495895a-b01e-4fe6-9abd-d8e5e4123e01
+184/500
 
 # ╔═╡ Cell order:
 # ╠═dbbcbf84-be7d-11ef-3384-2b2a69580c7a
@@ -460,3 +471,6 @@ viz_p_wins(80)
 # ╠═c7630eb9-0e98-428f-a3cc-0080ed5918e5
 # ╠═f6dea05b-53c8-45cb-9e99-840728bb9feb
 # ╠═1af4f256-9631-41ae-8241-a28f5dae3400
+# ╠═74e48e7e-0f30-459c-928a-7ed1e4d50c6c
+# ╠═837f94e4-055a-41cd-89c6-0a605bd54321
+# ╠═d495895a-b01e-4fe6-9abd-d8e5e4123e01
