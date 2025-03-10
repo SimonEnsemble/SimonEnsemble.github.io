@@ -7,11 +7,11 @@
   url: https://arxiv.org/abs/2409.12114
   image: pubs/TOHE.png
 
-- title: Inferring the shape of a solid inside a draining tank from its liquid level dynamics
+- title: Inferring the cross-sectional area profile of an unseen solid in a draining tank from liquid level dynamics
   authors: G. Fabusola, C. Simon
-  journal: arXiv
-  year: 2024
-  url: https://arxiv.org/abs/2408.14503
+  journal: Chemical Engineering Science
+  year: 2025
+  url: https://www.sciencedirect.com/science/article/pii/S0009250925003112
   image: pubs/tank_inv_prob.jpg
 
 - title: Computationally predicting the performance of gas sensor arrays for anomaly detection
