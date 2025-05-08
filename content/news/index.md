@@ -1,3 +1,9 @@
+## our research group at the national AIChE conference!
+
+our research group presenting at the national American Institute of Chemical Engineers (AIChE) conference in San Diego! Fall 2024.
+
+{{< figure src="/ppl_photos/aiche.jpeg" width="50%">}}
+
 ## Adrian → Dr. Henle!
 
 congratulations to Adrian Henle for graduating with his PhD in Chemical Engineering, the third PhD out of our research group! Adrian's landmark achievement is, in my view, [`PoreMatMod.jl`](https://pubs.acs.org/doi/10.1021/acs.jcim.1c01219), an open-source Julia package for find-and-replace on crystal structure models.
