@@ -257,7 +257,7 @@ md"🍷 we gain a lot of insight by visualizing a linear program in 2D, as we di
 
 for blends of more than three varieties, we lose this interpretability since we cannot visualize a design space that is greater than 4D.
 
-interestingly, last month, I was drinking this Oregon wine that is composed of a blend of _nine_ different grapes❗ hard to imagine a nine-dimensional polytope comprising the feasible region.
+interestingly, last month, I was drinking [this Oregon wine](https://evolutionwine.com/product/evolution-lucky-no-9-white-2/) that is composed of a blend of _nine_ different varities of white wine❗ hard to imagine a nine-dimensional polytope comprising the feasible region.
 "
 
 # ╔═╡ 5dc5fa6c-1f52-447e-96fe-495c4dc336ad
@@ -270,6 +270,9 @@ md"
 !!! note \"post-fermentation wine blends vs. co-fermentation\"
 	we considered a _post_-fermentation wine blend. by contrast, some wine is made by blending the distinct varieties of grapes or grape juices together in the fermenter, then fermenting them together. in that case, I imagine it is much more difficult to predict what the specifications of the wine will be at the end of the fermentation.
 "
+
+# ╔═╡ 02b18ae4-fbac-41fb-a4f6-59e2b80b3da6
+md"🙏 again, credit to Dan Putler for his blog post on linear programming for wine blending."
 
 # ╔═╡ Cell order:
 # ╟─83d420f4-3c94-467f-8c5a-879b6201e74c
@@ -294,3 +297,4 @@ md"
 # ╟─a1495447-bf20-46f1-b971-bb45c3e310a6
 # ╟─5dc5fa6c-1f52-447e-96fe-495c4dc336ad
 # ╟─dcf361c6-6cb2-4204-ad4e-934aaf824cc2
+# ╟─02b18ae4-fbac-41fb-a4f6-59e2b80b3da6
