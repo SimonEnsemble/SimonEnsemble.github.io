@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Guidelines for multi-fidelity Bayesian optimization of molecules and materials
+  authors: Q. Ke, C. Simon
+  journal: Nature Computational Science. (News & Views)
+  year: 2025
+  url: https://www.nature.com/articles/s43588-025-00833-6
+  image: pubs/mfbo_news.png
+
 - title: Optimizing mixtures of metal–organic frameworks for robust and bespoke passive atmospheric water harvesting
   authors: C. Harriman, Q. Ke, T. Vlugt, A. Howarth, C. Simon
   journal: ChemRxiv

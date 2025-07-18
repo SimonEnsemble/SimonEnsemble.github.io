@@ -27,14 +27,6 @@
 # ugrad students
 
 {{< student 
-  name="Kyrstin Datanagan"
-  degree="Chemical Engineering major"
-  about="In my free time, I enjoy reading my bible, working out, taking care of my guinea pigs, playing Magic the Gathering, as well as playing Warhammer."
-  research="training machine learning models to predict optical properties of Ag nanoparticles sculpted by DNA"
-  photo="/ppl_photos/kyrstin.jpeg"
->}}
-
-{{< student 
   name="Charles Harriman"
   degree="Chemical Engineering major"
   about="My hobbies include soccer and hiking."
@@ -111,9 +103,12 @@
 * Daniel Casey-Hain
     * _now_: PhD student in Chemical Engineering at UIUC
 
-* Clayton Amerman
+* Clayton Amerman. Chemical Engineering
 
-* Sebastian Vaughan
+* Sebastian Vaughan. Chemical Engineering.
+
+* Kyrstin Datanagan. Chemical Engineering.
+    * _now_: engineer at KLA Corporation.
 
 ## visiting PhD students
 * Gabriel Augusto. Visiting PhD student (1 year) from Federal University of São Paulo. 
