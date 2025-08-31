@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Adaptive allocation of Monte Carlo samples for efficient, multi-fidelity computational screening of metal-organic frameworks
+  authors: Q. Ke, N.S. Bobbitt, J. Doppa, H. Wang, C. Simon
+  journal: ChemRxiv
+  year: 2025
+  url: https://chemrxiv.org/engage/chemrxiv/article-details/68ae61d1728bf9025e7d05d7
+  image: pubs/bai.png
+
 - title: Guidelines for multi-fidelity Bayesian optimization of molecules and materials
   authors: Q. Ke, C. Simon
   journal: Nature Computational Science. (News & Views)
