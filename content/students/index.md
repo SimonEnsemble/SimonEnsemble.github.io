@@ -49,6 +49,7 @@
 
 * Adrian Henle. PhD, Chemical Engineering
     * _thesis_: "Graph-Based Algorithms and Machine Learning Approaches for Molecular Property Prediction and Material Design"
+    * _now_: Cisco, Machine Learning Engineer
     * [Google Scholar](https://scholar.google.com/citations?user=s8a0NmYAAAAJ&hl=en)
 
 ## ms 
