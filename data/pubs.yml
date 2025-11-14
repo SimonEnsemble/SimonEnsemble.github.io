@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Conductive Covalent Organic Frameworks as Chemiresistive Sensor Arrays for the Detection and Differentiation of Gasotransmitters
+  authors: G. Benedetto, R. Stolz, Z. Meng, J. Chan, E. Shehayeb, C. Morrell, G. Fabusola, N. Elsaesser, C. Simon, K. Mirica
+  journal: Journal of the American Chemical Society
+  year: 2025
+  url: https://pubs.acs.org/doi/10.1021/jacs.5c11454
+  image: pubs/kat_jacs.png
+
 - title: Metal–Organic Framework-Based Chemiresistive Array Paired with Machine Learning Algorithms for the Detection and Differentiation of Toxic Gases
   authors: G. Benedetto, P. Damacet, E. O. Shehayeb, G. Fabusola, C. Simon, K. A. Mirica
   journal: ACS Sensors
