@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Adaptive, Bayesian experimental design to efficiently determine the critical micelle concentration of a surfactant
+  authors: M. Hammond, Q. Ke, A. Deshwal, C. Simon, A. Bain
+  journal: ChemRxiv
+  year: 2025
+  url: https://chemrxiv.org/engage/chemrxiv/article-details/692f7699a10c9f5ca1db665cmc.png
+  image: pubs/cmc.png
+
 - title: Conductive Covalent Organic Frameworks as Chemiresistive Sensor Arrays for the Detection and Differentiation of Gasotransmitters
   authors: G. Benedetto, R. Stolz, Z. Meng, J. Chan, E. Shehayeb, C. Morrell, G. Fabusola, N. Elsaesser, C. Simon, K. Mirica
   journal: Journal of the American Chemical Society
