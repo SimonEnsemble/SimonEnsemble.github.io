@@ -21,11 +21,11 @@
   url: https://pubs.acs.org/doi/10.1021/acssensors.5c02182
   image: pubs/acs_sensors_kat.png
 
-- title: Adaptive allocation of Monte Carlo samples for efficient, multi-fidelity computational screening of metal-organic frameworks
+- title: Adaptive allocation of Monte Carlo samples for efficient, multifidelity computational screening of metal-organic frameworks
   authors: Q. Ke, N.S. Bobbitt, J. Doppa, H. Wang, C. Simon
-  journal: ChemRxiv
+  journal: Journal of Chemical Theory and Computation
   year: 2025
-  url: https://chemrxiv.org/engage/chemrxiv/article-details/68ae61d1728bf9025e7d05d7
+  url: https://pubs.acs.org/doi/full/10.1021/acs.jctc.5c01431
   image: pubs/bai.png
 
 - title: Guidelines for multi-fidelity Bayesian optimization of molecules and materials
