@@ -24,6 +24,16 @@
   photo="/ppl_photos/qia_ke.jpeg"
 >}}
 
+# masters students
+
+{{< student 
+ name="Hayden Matthews"
+  degree="B.S. Chemical Engineering, Oregon State University."
+  about="I'm into tinkering, playing guitar, walking outdoors, and cooking. Always looking for new hobbies to explore and taking life one day at a time."
+  research="Using machine learning and decision-making algorithms to efficiently optimize chemical reactors."
+  photo="/ppl_photos/hayden.jpeg"
+>}}
+
 # ugrad students
 
 {{< student 
