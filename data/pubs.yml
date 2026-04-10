@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Estimating the make-up of a blend in terms of its parent mixtures (e.g., reverse-engineering a wine blend) based on chemical fingerprints
+  authors: C. Simon, T. Onufer, A. G. Andrade, E. Tomasino
+  journal: ChemRxiv
+  year: 2026
+  url: https://chemrxiv.org/doi/full/10.26434/chemrxiv.15001815/v1
+  image: pubs/wine_blending.png
+
 - title: Adaptive, Bayesian experimental design to efficiently determine the critical micelle concentration of a surfactant
   authors: M. Hammond, Q. Ke, A. Deshwal, C. Simon, A. Bain
   journal: Langmuir
