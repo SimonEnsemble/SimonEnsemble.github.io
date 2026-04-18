@@ -7,6 +7,13 @@
   url: https://chemrxiv.org/doi/full/10.26434/chemrxiv.15001815/v1
   image: pubs/wine_blending.png
 
+- title: Array of bimetallic metallophthalocyanine-based metal-organic frameworks for chemiresistive detection and differentiation of toxic gases
+  authors: E. Cline, H.-J. Noh, G. Benedetto, G. Fabusola, A. Hawkins, C. Simon, K. Mirica
+  journal: Chem
+  year: 2026
+  url: https://www.sciencedirect.com/science/article/pii/S2451929426001038?dgcid=coauthor
+  image: pubs/chem_kat.png
+
 - title: Adaptive, Bayesian experimental design to efficiently determine the critical micelle concentration of a surfactant
   authors: M. Hammond, Q. Ke, A. Deshwal, C. Simon, A. Bain
   journal: Langmuir
