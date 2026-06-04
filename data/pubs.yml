@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Bayesian reversal of the liquid level trajectory in a draining tank for pollution forensics
+  authors: K. Jones, G. Fabusola, A. Dowling, C. Simon
+  journal: arXiv
+  year: 2026
+  url: https://arxiv.org/abs/2605.29193
+  image: pubs/time_reversal.png
+
 - title: Estimating the make-up of a blend in terms of its parent mixtures (e.g., reverse-engineering a wine blend) based on chemical fingerprints
   authors: C. Simon, T. Onufer, A. G. Andrade, E. Tomasino
   journal: ChemRxiv
