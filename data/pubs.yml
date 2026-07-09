@@ -1,5 +1,12 @@
 - institution: Oregon State University
 
+- title: Environment-specific, data-driven radiation source detection, localization and tracking via a sensor network and ensembles of randomized decision trees
+  authors: A. White, C. Simon, H. Yang
+  journal: Research Square
+  year: 2026
+  url: https://www.researchsquare.com/article/rs-10195330/v1
+  image: pubs/rad_sensing.png
+
 - title: Bayesian reversal of the liquid level trajectory in a draining tank for pollution forensics
   authors: K. Jones, G. Fabusola, A. Dowling, C. Simon
   journal: arXiv
