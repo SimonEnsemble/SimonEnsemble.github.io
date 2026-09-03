@@ -14,6 +14,11 @@ end
 
 # ╔═╡ e8b6036c-91f1-4c75-91d1-c1a5f6cbf9b6
 md"
+
+!!! note
+	topic: simulation-based approach for hypothesis testing to decide whether an observed distribution over categories differs from an expected distribution. I learned this from the excellent textbook \"Understanding Data\" by Alan Garfinkel and Yina Guo.
+
+
 ## customers pick drinks at a bar
 just opened a bar! we serve three drinks. each individual customer lines up and orders a single drink.
 "
