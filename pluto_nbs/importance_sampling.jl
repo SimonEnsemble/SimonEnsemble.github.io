@@ -188,8 +188,8 @@ begin
 	hist!(ax, xᵢs, weights=w̃s, normalization=:pdf, bins=range(0, 1, length=30),
 		  label="weighted particles", color=Cycled(3))
 	xs = range(-0.5, 1.5, length=300)
-	lines!(ax, xs, γ.(xs) / Z_true, label="π(x)", linewidth=3)
-	lines!(ax, xs, η.(xs), label="η(x)", linewidth=3, linestyle=:dash)
+	lines!(ax, xs, γ.(xs) / Z_true, label="target density, π(x)", linewidth=3)
+	lines!(ax, xs, η.(xs), label="importance density, η(x)", linewidth=3, linestyle=:dash)
 	axislegend(ax)
 	fig
 end
