@@ -21,25 +21,11 @@ from these simple assumptions, we wish to model the function $c(\mathbf{x})$ [g/
 
 ### the steady-state diffusion-advection-decay equation
 applying the law of conservation of mass and accounting for the four pieces of physics listed above, we arrive at the steady-state [diffusion-advection-decay [partial differential] equation](https://en.wikipedia.org/wiki/Convection%E2%80%93diffusion_equation) with a point-source term:
-$$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c(\mathbf{x}) - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x}) - \tau^{-1}c(\mathbf{x}) + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
-respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function and e.g. $\boldsymbol \nabla\_\mathbf{x}:=[\frac{\partial }{\partial x\_1}, \frac{\partial }{\partial x\_2}]$ for $n=2$.)
-
-{{<figure
-    src="/blog/plume/eqn.jpeg"
-    caption="the simple model of the chemical plume at steady state."
->}}
-
-(this model is employed in the [Infotaxis](https://www.nature.com/articles/nature05464) policy to search for the source of a chemical plume. the equations we derive match those provided in the SI of the Infotaxis paper.)
-
-### transformation to the modified Helmholtz equation
-we transform the steady-state diffusion-advection-decay equation into a modified Helmholtz problem via the transformation:
-$$c(\mathbf{x})=:u(\mathbf{x})e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
-
-by the product rule:
+$$D {\boldsymbol \product rule:
 $${\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x})= ({\boldsymbol \nabla}\_{\mathbf{x}}u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ u(\mathbf{x})\mathbf{v}(2D)^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
 and
 $${\boldsymbol \nabla}_{\mathbf{x}}^2c(\mathbf{x}) = {\boldsymbol \nabla}\_{\mathbf{x}} \cdot {\boldsymbol \nabla}\_{\mathbf{x}}c (\mathbf{x})=
-({\boldsymbol \nabla}\_{\mathbf{x}}^2u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ ({\boldsymbol \nabla}\_{\mathbf{x}} u(\mathbf{x}))\mathbf{v} D^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)} + u(\mathbf{x})(2D)^{-2} \mathbf{v}\cdot \mathbf{v} e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.
+({\boldsymbol \nabla}\_{\mathbf{x}}^2u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ ({\boldsymbol \nabla}\_{\mathbf{x}} u(\mathbf{x})) \cdot \mathbf{v} D^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)} + u(\mathbf{x})(2D)^{-2} \mathbf{v}\cdot \mathbf{v} e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.
 $$
 
 stuffing these into the original diffusion-advection-decay eqn gives the modified Helmholtz problem in $u(\mathbf{x})$ for $\mathbf{x}\in\mathbb{R}^n$:
@@ -159,7 +145,7 @@ $$
 \frac{1}{i \lVert \mathbf{x} \rVert} \int_{\\{Re^{i\theta} :\\, 0 \leq \theta \leq \pi\\}} g(z)dz
 $$
 
-now, as $R\rightarrow\infty$, the second integral becomes $I_3(\mathbf{x})$ we're looking for. and,
+now, as $R\rightarrow\infty$, the first integral becomes $I_3(\mathbf{x})$ we're looking for. and,
 via [Jordan's lemma](https://en.wikipedia.org/wiki/Jordan%27s_lemma), $\int_{\\{Re^{i\theta} :\\, 0 \leq \theta \leq \pi\\}}g(z) dz \rightarrow 0$ as $R\rightarrow \infty$.
 so:
 $$
@@ -179,7 +165,7 @@ $$\text{Res}(g, \kappa/(2\pi)i)=\lim_{z\rightarrow \kappa/(2\pi)i}(z-\kappa/(2\p
 finally, then:
 $$
 I_3(\mathbf{x})=
-\int\_{\mathbb{R}^2} 
+\int\_{\mathbb{R}^3} 
 \dfrac{
 e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 }{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}d\boldsymbol\omega = 
@@ -187,7 +173,7 @@ e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
 $$
 
 and we have:
-$$u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{-\mathbf{v} \mathbf{x}\_0/(2D)}$$
+$$u(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\rVert} e^{-\kappa \lVert \mathbf{x}-\mathbf{x}_0\rVert}e^{-\mathbf{v} \cdot \mathbf{x}\_0/(2D)}$$
 
 going back to $c(\mathbf{x})$, finally, we have the shape of the chemical plume in 3D!
 
@@ -220,14 +206,14 @@ $$
 I_2(\mathbf{x})=
 \int_0^{\infty}
 \dfrac{
-r
+1
 }{4\pi^2 r^2 + \kappa^2}
 2\pi J_0(2\pi r \lVert \mathbf{x}\rVert)
 r dr=
 \frac{1}{2\pi}
 \int_0^{\infty}
 \dfrac{
-r
+1
 }{r^2 + (\kappa/2\pi)^2}
 J_0(2\pi r \lVert \mathbf{x}\rVert)
 r dr
@@ -332,7 +318,7 @@ we assume:
 * sufficiently far from the surface of the sensor, the concentration in the gas is that in the bulk, $c(\mathbf{x})$. 
 * steady-state conditions.
 
-treating only the diffusion at this length-scale, the concentration near the sensor is radially symmetric, with $c_s(r)$ with $r \in [0, \kappa^{-1}]$ the distance from the sensor, satisfies the steady-state diffusion equation in polar coordinates:
+treating only the diffusion at this length-scale, the concentration near the sensor is radially symmetric, with $c_s(r)$ with $/ \in [0, \kappa^{-1}]$ the distance from the sensor, satisfies the steady-state diffusion equation in polar coordinates:
 $$\frac{\mathrm{d}^2c\_s}{\mathrm{d}r^2}+\frac{1}{r}\frac{\mathrm{d}c\_s}{\mathrm{d}r} =\frac{1}{r}\frac{\mathrm{d}}{\mathrm{d}r} \left( r\frac{\mathrm{d} c\_s}{\mathrm{d} r}\right) = 0$$
 integrating twice then applying the boundary conditions $c_s(a)=0$ and $c\_s(\kappa^{-1})=c(\mathbf{x})$, with the length-scale $\kappa^{-1}$ dictating how far from the sensor the concentration equals the bulk, gives:
 $$c\_s(r) = c(\mathbf{x}) \frac{\log(r/a)}{\log(\kappa^{-1}/a)}.$$
@@ -350,17 +336,17 @@ thus, when a sensor stays at position $\mathbf{x}$ for a duration $\Delta t$ to 
 
 #### definition
 the Fourier transform of a function $f(\mathbf{x})$ is defined as:
-$$\mathcal{F}[f(\mathbf{x})] ({\boldsymbol \omega}):=\int_{\mathbb{R}^n} f(\mathbf{x}) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} =: \tilde{f}({\boldsymbol \omega})$$
+$$\mathcal{F}[f(\mathbf{x})] ({\boldsymbol \omega}):=\int_{\mathbb{R}^n} f(\mathbf{x}) e^{-2\pi i {\boldsymbol \omega \cdot \mathbf{x}}}d\mathbf{x} =: \tilde{f}({\boldsymbol \omega})$$
 where ${\boldsymbol \omega}\in\mathbb{R}^n$.
 
 #### inverse Fourier transform
 for recovering the function $f(\mathbf{x})$ from its Fourier transform $\tilde{f}(\boldsymbol \omega)$, the inverse Fourier transform is:
-$$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega}}d\mathbf{x}.$$
+$$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega \cdot \mathbf{x}}}d\mathbf{x}.$$
 
 #### Fourier transform of a Dirac delta function
 
 via the sifting property of the Dirac delta function
-$$\mathcal{F}[\delta(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \delta (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0}.$$
+$$\mathcal{F}[\delta(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \delta (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0}.$$
 
 #### Fourier transform of derivatives
 
@@ -376,7 +362,7 @@ $$\mathcal{F}\left[{\boldsymbol \nabla}\_\mathbf{x}^2 f \right] ({\boldsymbol \o
 #### Fourier transform of a translated function
 
 finally, we remark that a translation of the function $f(\mathbf{x})$ by vector $\mathbf{x}_0$ gives:
-$$\mathcal{F}[f(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} f (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0} \tilde{f}(\boldsymbol \omega).$$
+$$\mathcal{F}[f(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} f (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}\cdot\mathbf{x}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0} \tilde{f}(\boldsymbol \omega).$$
 shown after a substitution $\mathbf{x}^\prime:=\mathbf{x}-\mathbf{x}_0$. hence,
 $$\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x}) = f(\mathbf{x}-\mathbf{x}_0).$$
 
