@@ -21,7 +21,22 @@ from these simple assumptions, we wish to model the function $c(\mathbf{x})$ [g/
 
 ### the steady-state diffusion-advection-decay equation
 applying the law of conservation of mass and accounting for the four pieces of physics listed above, we arrive at the steady-state [diffusion-advection-decay [partial differential] equation](https://en.wikipedia.org/wiki/Convection%E2%80%93diffusion_equation) with a point-source term:
-$$D {\boldsymbol \product rule:
+$$D {\boldsymbol \nabla}_{\mathbf{x}}^2 c(\mathbf{x}) - \mathbf{v} \cdot \{\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x}) - \tau^{-1}c(\mathbf{x}) + R \delta(\mathbf{x}-\mathbf{x}_0) = 0$$
+respectively, the terms model isotropic diffusivity, advection by wind, decay, and introduction of the chemical into the environment. (here, $\delta(\cdot)$ is the Dirac delta function and e.g. $\boldsymbol \nabla\_\mathbf{x}:=[\frac{\partial }{\partial x\_1}, \frac{\partial }{\partial x\_2}]$ for $n=2$.)
+
+{{<figure
+    src="/blog/plume/eqn.jpeg"
+    caption="the simple model of the chemical plume at steady state."
+>}}
+
+(this model is employed in the [Infotaxis](https://www.nature.com/articles/nature05464) policy to search for the source of a chemical plume. the equations we derive match those provided in the SI of the Infotaxis paper.)
+
+### transformation to the modified Helmholtz equation
+we transform the steady-state diffusion-advection-decay equation into a modified Helmholtz problem via the transformation:
+$$c(\mathbf{x})=:u(\mathbf{x})e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
+
+by the product rule:
+
 $${\boldsymbol \nabla}\_{\mathbf{x}}c(\mathbf{x})= ({\boldsymbol \nabla}\_{\mathbf{x}}u(\mathbf{x}) )e^{\mathbf{v}\cdot\mathbf{x} /(2D)}+ u(\mathbf{x})\mathbf{v}(2D)^{-1}e^{\mathbf{v}\cdot\mathbf{x} /(2D)}.$$
 and
 $${\boldsymbol \nabla}_{\mathbf{x}}^2c(\mathbf{x}) = {\boldsymbol \nabla}\_{\mathbf{x}} \cdot {\boldsymbol \nabla}\_{\mathbf{x}}c (\mathbf{x})=
@@ -49,7 +64,7 @@ $$\tilde{u}(\boldsymbol \omega) = \dfrac{\frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x
 ### the inverse Fourier transform
 
 to obtain $u(\mathbf{x})$, we take the inverse Fourier transform of $\tilde{u}(\boldsymbol \omega)$:
-$$u(\mathbf{x}) = \int_{\mathbb{R}^n} \dfrac{\frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x}_0 / (2D)}}{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}} d\boldsymbol\omega.$$
+$$u(\mathbf{x}) = \int_{\mathbb{R}^n} \dfrac{\frac{R}{D}e^{-\mathbf{v}\cdot\mathbf{x}_0 / (2D)}}{4\pi^2 \lVert \boldsymbol \omega \rVert^2 + \kappa^2}e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}} d\boldsymbol\omega.$$
 
 the $e^{-2\pi i \boldsymbol\omega \cdot \mathbf{x}_0}$ term corresponds to a translation, so let's focus on:
 
@@ -70,7 +85,7 @@ is qualitatively different depending on the dimension of the space, $n$. so, we 
 #### case $n=3$
 
 we write the integral $I_3(\mathbf{x})$ in spherical coordinates $(\rho, \phi, \theta)$ with $\rho=\lVert \boldsymbol\omega\rVert$ the radius, $\phi$ the polar angle, and $\theta$ the azimuthal angle. aligning the $z$-axis of this spherical coordinate system with the vector $\mathbf{x}$, we can write:
-$$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \lVert \lVert \boldsymbol \omega \lVert \cos \phi$$
+$$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \rVert \lVert \boldsymbol \omega \rVert \cos \phi$$
 and the integral becomes (the volume element in spherical coordinates is $\rho^2\sin \phi d\rho d\phi d\theta$):
 
 $$
@@ -168,7 +183,7 @@ I_3(\mathbf{x})=
 \int\_{\mathbb{R}^3} 
 \dfrac{
 e^{2\pi i \boldsymbol \omega \cdot \mathbf{x}}
-}{4\pi^2 \lvert \boldsymbol \omega \rvert^2 + \kappa^2}d\boldsymbol\omega = 
+}{4\pi^2 \lVert \boldsymbol \omega \rVert^2 + \kappa^2}d\boldsymbol\omega = 
 \frac{1}{4\pi \lVert \mathbf{x} \rVert}e^{-\kappa\lVert \mathbf{x}\rVert}.
 $$
 
@@ -183,7 +198,7 @@ $$\boxed{c(\mathbf{x})=\frac{R}{4\pi D} \frac{1}{\lVert \mathbf{x}-\mathbf{x}_0\
 
 we write the integral $I_2(\mathbf{x})$ in polar coordinates $(r, \theta)$ with $r=\lVert \boldsymbol\omega\rVert$ the radius and $\theta$ the angle. 
 aligning the $x$-axis of this polar coordinate system with the vector $\mathbf{x}$, we can write:
-$$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \lVert \lVert \boldsymbol \omega \lVert \cos \theta$$
+$$\mathbf{x}\cdot \boldsymbol \omega= \lVert \mathbf{x} \rVert \lVert \boldsymbol \omega \rVert \cos \theta$$
 and the integral becomes (the area element in polar coordinates is $r drd\theta$):
 $$
 I_2(\mathbf{x})=
@@ -245,15 +260,15 @@ first, we define a data structure to store the parameters characterizing the che
 struct PlumeParams
     x₀::Vector{Float64} # source location [m]
     R::Float64          # source strength [g/min]
-    v::Vector{Float64}  # wind vector [m/s]
-    D::Float64          # diffusion coefficent [m²/min]
+    v::Vector{Float64}  # wind vector [m/min]
+    D::Float64          # diffusion coefficient [m²/min]
     τ::Float64          # lifespan [min]
-    κ::Float64          # m⁻²
+    κ::Float64          # m⁻¹
 end
 
 # constructor that computes κ for us
 function PlumeParams(; x₀=x₀, R=R, D=D, τ=τ, v=v)
-    κ = sqrt((dot(v, v) + 4 * D / τ) / (4 * D ^ 2)) # m⁻²
+    κ = sqrt((dot(v, v) + 4 * D / τ) / (4 * D ^ 2)) # m⁻¹
     return PlumeParams(x₀, R, v, D, τ, κ)
 end
 ```
@@ -318,7 +333,7 @@ we assume:
 * sufficiently far from the surface of the sensor, the concentration in the gas is that in the bulk, $c(\mathbf{x})$. 
 * steady-state conditions.
 
-treating only the diffusion at this length-scale, the concentration near the sensor is radially symmetric, with $c_s(r)$ with $/ \in [0, \kappa^{-1}]$ the distance from the sensor, satisfies the steady-state diffusion equation in polar coordinates:
+treating only the diffusion at this length-scale, the concentration near the sensor is radially symmetric, with $c_s(r)$ with $r \in [a, \kappa^{-1}]$ the distance from the sensor, satisfies the steady-state diffusion equation in polar coordinates:
 $$\frac{\mathrm{d}^2c\_s}{\mathrm{d}r^2}+\frac{1}{r}\frac{\mathrm{d}c\_s}{\mathrm{d}r} =\frac{1}{r}\frac{\mathrm{d}}{\mathrm{d}r} \left( r\frac{\mathrm{d} c\_s}{\mathrm{d} r}\right) = 0$$
 integrating twice then applying the boundary conditions $c_s(a)=0$ and $c\_s(\kappa^{-1})=c(\mathbf{x})$, with the length-scale $\kappa^{-1}$ dictating how far from the sensor the concentration equals the bulk, gives:
 $$c\_s(r) = c(\mathbf{x}) \frac{\log(r/a)}{\log(\kappa^{-1}/a)}.$$
@@ -341,18 +356,18 @@ where ${\boldsymbol \omega}\in\mathbb{R}^n$.
 
 #### inverse Fourier transform
 for recovering the function $f(\mathbf{x})$ from its Fourier transform $\tilde{f}(\boldsymbol \omega)$, the inverse Fourier transform is:
-$$f(\mathbf{x})=\mathcal{F}^{-1}[f({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega \cdot \mathbf{x}}}d\mathbf{x}.$$
+$$f(\mathbf{x})=\mathcal{F}^{-1}[\tilde{f}({\boldsymbol \omega})] (\mathbf{x}) :=\int_{\mathbb{R}^n} \tilde{f}({\boldsymbol \omega}) e^{2\pi i {\boldsymbol \omega \cdot \mathbf{x}}}d\boldsymbol \omega .$$
 
 #### Fourier transform of a Dirac delta function
 
 via the sifting property of the Dirac delta function
-$$\mathcal{F}[\delta(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \delta (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0}.$$
+$$\mathcal{F}[\delta(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \delta (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}}d\mathbf{x} = e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}_0}.$$
 
 #### Fourier transform of derivatives
 
 the Fourier transform of a derivative is:
-$$\mathcal{F}\left[\frac{\partial f}{\partial x_i}\right] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \frac{\partial f}{\partial x_i} e^{-2\pi i {\boldsymbol \omega}}d\mathbf{x}.$$
-tackling the integral over $x_i \in (-\infty, \infty)$ by parts, with $u:=e^{-2\pi i \boldsymbol \omega}$ and $dv=\frac{\partial f}{\partial x_i} dx_i$ gives, provided $f \rightarrow 0$ as $x_i \rightarrow \pm \infty$:
+$$\mathcal{F}\left[\frac{\partial f}{\partial x_i}\right] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} \frac{\partial f}{\partial x_i} e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}}d\mathbf{x}.$$
+tackling the integral over $x_i \in (-\infty, \infty)$ by parts, with $u:=e^{-2\pi i {\boldsymbol \omega}\cdot\mathbf{x}}$ and $dv=\frac{\partial f}{\partial x_i} dx_i$ gives, provided $f \rightarrow 0$ as $x_i \rightarrow \pm \infty$:
 $$\mathcal{F}\left[\frac{\partial f}{\partial x_i}\right] ({\boldsymbol \omega}) = 2 \pi i \omega_i \tilde{f}(\boldsymbol \omega).$$
 hence,
 $$\mathcal{F}\left[{\boldsymbol \nabla}_{\mathbf{x}} f \right] ({\boldsymbol \omega}) = 2 \pi i {\boldsymbol \omega} \tilde{f}(\boldsymbol \omega)$$
@@ -362,9 +377,9 @@ $$\mathcal{F}\left[{\boldsymbol \nabla}\_\mathbf{x}^2 f \right] ({\boldsymbol \o
 #### Fourier transform of a translated function
 
 finally, we remark that a translation of the function $f(\mathbf{x})$ by vector $\mathbf{x}_0$ gives:
-$$\mathcal{F}[f(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} f (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}\cdot\mathbf{x}}d\mathbf{x} = e^{-2\pi i \mathbf{x}_0} \tilde{f}(\boldsymbol \omega).$$
+$$\mathcal{F}[f(\mathbf{x}-\mathbf{x}_0)] ({\boldsymbol \omega}) := \int\_{\mathbb{R}^n} f (\mathbf{x} - \mathbf{x}_0) e^{-2\pi i {\boldsymbol \omega}\cdot\mathbf{x}}d\mathbf{x} = e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}_0} \tilde{f}(\boldsymbol \omega).$$
 shown after a substitution $\mathbf{x}^\prime:=\mathbf{x}-\mathbf{x}_0$. hence,
-$$\mathcal{F}^{-1}[f({\boldsymbol \omega})e^{-2\pi i \mathbf{x}_0}] (\mathbf{x}) = f(\mathbf{x}-\mathbf{x}_0).$$
+$$\mathcal{F}^{-1}[\tilde{f}({\boldsymbol \omega})e^{-2\pi i {\boldsymbol \omega} \cdot \mathbf{x}_0}] (\mathbf{x}) = f(\mathbf{x}-\mathbf{x}_0).$$
 
 ## references
 * "n-dimensional Fourier Transform, Ch. 8" notes by Prof. Brad Osgood. [link](https://see.stanford.edu/materials/lsoftaee261/chap8.pdf)
